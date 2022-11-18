@@ -1,0 +1,56 @@
+<div class="form-horizontal">
+    <strong class="labelcolor">Degree of Disability: </strong>
+    <input type='radio' name="disability" id="rblPatial" Value="partial" onchange="checkMe(this)" />Partial
+    <input type='radio' name="disability" id="rbl25" Value="25%" onchange="checkMe(this)" />25%
+    <input type='radio' name="disability" id="rbl50" Value="50%" onchange="checkMe(this)" />50%
+    <input type='radio' name="disability" id="rbl75" Value="75%" onchange="checkMe(this)" />75%
+    <input type='radio' name="disability" id="rbl100" Value="100%" onchange="checkMe(this)" />100%
+    <input type='radio' name="disability" id="rblNone" Value="None" onchange="checkMe(this)" />None
+    <br />
+    <br />
+	<strong class="labelcolor">Activities of daily living affected: </strong>
+    <input type='checkbox' id="chkhousework" Value="housework, " onchange="checkMe(this)" />housework
+    <input type='checkbox' id="chkwork-related" Value="job work-related duties, " onchange="checkMe(this)" />job, work-related duties
+    <input type='checkbox' id="chkdriving" Value="driving, " onchange="checkMe(this)" />driving
+    <input type='checkbox' id="chksittingincar" Value="sitting in car, " onchange="checkMe(this)" />sitting in car
+    <input type='checkbox' id="chkwalking" Value="walking up/down downstairs" onchange="checkMe(this)" />walking up/down downstairs
+    <br />
+    <br />
+    <strong class="labelcolor">Restrictions: </strong>
+    <input type='checkbox' id="chkBending" Value="bending/twisting" onclick="checkMe(this)" />&nbsp;bending
+    <input type='checkbox' id="chkClimbing" Value="climbing stairs/ladders" onclick="checkMe(this)" />&nbsp;climbing stairs/ladders
+    <input type='checkbox' id="chkEnvironmental" Value="environmental conditions" onclick="checkMe(this)" />&nbsp;environmental conditions
+    <input type='checkbox' id="chkKneeling" Value="kneeling" onclick="checkMe(this)" />&nbsp;kneeling
+    <input type='checkbox' id="chkLifting" Value="lifting" onclick="checkMe(this)" />&nbsp;lifting
+    <input type='checkbox' id="chkOperatingHeavy" Value="operating heavy equipment" onclick="checkMe(this)" />&nbsp;operating heavy equipment
+    <input type='checkbox' id="chkOperatingofmotor" Value="operation of motor vehicles" onclick="checkMe(this)" />&nbsp;operation of motor vehicles
+    <input type='checkbox' id="chkPersonal" Value="personal protective equipment" onclick="checkMe(this)" />&nbsp;personal protective equipment
+    <input type='checkbox' id="chkSitting" Value="sitting" onclick="checkMe(this)" />&nbsp;sitting
+    <input type='checkbox' id="chkStanding" Value="standing" onclick="checkMe(this)" />&nbsp;standing
+    <input type='checkbox' id="chkUseofPublic" Value="use of public transportation" onclick="checkMe(this)" />&nbsp;use of public transportation
+    <input type='checkbox' id="chkUseofUpper" Value="use of upper extremities" onclick="checkMe(this)" />&nbsp;use of upper extremities
+    <br />
+    <strong class="labelcolor">Others:</strong>
+    <input type='text' ID="txtOtherRestrictions" TabIndex="33" onchange="txtMe(this)" style="Width:782px" />
+    <br />
+    <br />
+    <br />
+    <strong class="labelcolor">Work Status: </strong>
+    <br />
+    <input type='checkbox' id="chkAbletoWork" Value="Able to go back to work " onclick="checkMe(this)" />
+    Able to go back to work <input type="text" id="txtbackwork" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' id="chkWorking" Value="Working"  onclick="checkMe(this)" />&nbsp;Working <input type="text" id="txtWorking" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' id="chkNotWorking" Value="Not Working" onclick="checkMe(this)" />&nbsp;Not working <input type="text" id="txtNotWorking" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' id="chkPartiallyWorking" Value="Partially Working"  onclick="checkMe(this)" />&nbsp;Partially working <input type="text" id="txtPartiallyWorking" onchange="txtMe(this)" />
+
+</div>
+
+<script>
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+</script>

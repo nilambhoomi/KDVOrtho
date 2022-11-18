@@ -1,0 +1,35 @@
+﻿<!--<div class="col-md-3">
+    <label class="control-label labelcolor">GAIT:</label>
+</div>
+<div class="col-md-9" style="margin-top: 5px">
+
+
+    <section class="dropdown">
+        <input type="text" id="txtGAIT" onchange="txtMe(this)" />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtGAIT', this.value)" id="cboGAIT"></select>
+    </section>
+
+
+    <section class="dropdown">
+        <input type="text" id="txtAmbulates" onchange="txtMe(this)" />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtAmbulates', this.value)" id="cboAmbulates"></select>
+    </section>
+
+
+    <input type='checkbox' ID="chkFootslap" value="Foot slap/drop" onclick="checkMe(this)" /> Foot slap/drop
+    <input type='checkbox' ID="chkKneehyperextension" value="knee hyperextension" onclick="checkMe(this)" /> knee hyperextension
+    <input type='checkbox' ID="chkUnabletohealwalk" value="unable to heel walk" onclick="checkMe(this)" /> unable to heel walk
+    <input type='checkbox' ID="chkUnabletotoewalk" value="unable to toe walk" onclick="checkMe(this)" /> unable to toe walk
+    <label class="control-label">and </label>
+    <input type='text' ID="txtOther" onchange="txtMe(this)" style="Width:350px">
+</div>-->
+<script>
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+</script>

@@ -1,0 +1,226 @@
+﻿<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapRightPE" #rigthtdiv>
+        <span><b>Right Knee:</b> </span><label style="visibility:hidden">#rightkneetitle</label>
+        <input id="Text1" value="Reveals swelling / tenderness to palpation on the medial and lateral joint line." type="text" onchange="txtMe(this)" Style="margin-left: 0px;width:500px" />
+
+
+        <label> McMurray test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtMMRight" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtMMRight', this.value)" id="ddl_MMRight">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>, Lachman  is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLACRight" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLACRight', this.value)" id="ddl_LACRight">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>, Anterior drawer test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLADTestRight" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLADTestRight', this.value)" id="ddl_LADTestRight">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>, Patellofemoral grinding test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLPGTestRight" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLPGTestRight', this.value)" id="ddl_LPGTestRight">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>.</label>
+
+        <br />
+        <label> Range of motion is from 0 to </label>
+        <section style="display:inline">
+            <input type="text" id="txtLmotionRight" onchange="txtMe(this)" Style="margin-left: 0px;" value="__ degrees" />
+        </section>
+        <label> of flexion (normal range of motion is 0 to 135 degrees of flexion).</label>
+        <input type="checkbox" ID="chkMedialRight" onclick="checkMe(this)" value="Knee is stable with varus and valgus stress test." /> Knee is stable with varus and valgus stress test.
+        <br />
+        <input type="checkbox" ID="chkMcMurrayRight" onclick="checkMe(this)" value="The patient has no motor or sensory deficit of the right lower extremity." />The patient has no motor or sensory deficit of the right lower extremity.
+        <br />
+
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormR" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="Button1" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <br />
+            <label style="visibility:hidden">#kneerightrom</label>
+            <section style="display: none"><span class="final" id="Span1"></span><span class="interim" id="Span2"></span></section>
+        </section>
+        <label style="visibility:hidden">#kneerightmri</label>
+    </div>
+
+    <br />
+        <div id="WrapLeftPE" #leftdiv>
+        <span><b>Left Knee:</b> </span><label style="visibility:hidden">#leftkneetitle</label>
+
+       
+        <input id="txtLeftReveals" value="Reveals swelling / tenderness to palpation on the medial and lateral joint line."  type="text" onchange="txtMe(this)" Style="margin-left: 0px;width:500px" />
+        <input type="checkbox" ID="chkMedialLeft" onclick="checkMe(this)" value="Knee is stable with varus and valgus stress test." /> Knee is stable with varus and valgus stress test.
+        <label> McMurray test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtMMLeft" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtMMLeft', this.value)" id="ddl_MMLeft">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>. Lachman  is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLACLeft" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLACLeft', this.value)" id="ddl_LACLeft">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>. Anterior drawer test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLADTestLeft" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLADTestLeft', this.value)" id="ddl_LADTestLeft">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>. Patellofemoral grinding test is </label>
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtLPGTestLeft" value="" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtLPGTestLeft', this.value)" id="ddl_LPGTestLeft">
+                <option value=""></option>
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+
+            </select>
+        </section>
+        <label>.</label>
+        <br />
+        <label> Range of motion is from 0 to </label>
+        <section style="display:inline">
+            <input type="text" id="txtLmotionLeft" onchange="txtMe(this)" Style="margin-left: 0px;" value="__ degrees" />
+        </section>
+        <label> of flexion (normal range of motion is from 0 to 135 degrees of flexion).</label>
+        <br />
+        <input type="checkbox" ID="chkMcMurrayLeft" onclick="checkMe(this)" value="The patient has no motor or sensory deficit of the left lower extremity." /> The patient has no motor or sensory deficit of the left lower extremity.
+
+        <br />
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormL" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <br />
+            <label style="visibility:hidden">#kneeleftrom</label>
+            <section style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></section>
+        </section>
+
+        <label style="visibility:hidden">#kneeleftmri</label>
+    </div>
+
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+</script>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TreatMents>
+  <TreatMent isChecked="True" name="I recommend " />
+  <TreatMent isChecked="True" name="I recommend to continue physical therapy treatment as previously administered to until diagnostic studies are obtained and reviewed." />
+  <TreatMent isChecked="False" name="I recommend to continue physical therapy treatment as previously administered with the addition of _______________________" />
+  <TreatMent isChecked="False" name="I recommend to continue physical therapy as previously administered to _______" />
+  <TreatMent isChecked="False" name="The patient will continue to follow physical therapy instructions from his/her _____________ with regard to his/her _____________" />
+  <TreatMent isChecked="False" name="The patient will " />
+  <TreatMent isChecked="False" name="continue medication as previously administered." />
+  <TreatMent isChecked="False" name="will continue medications as needed." />
+  <TreatMent isChecked="False" name="The patient's medications have been changed from _________ to________. The patient will return for revaluation in ___weeks at which point in time I will assess the progress with physical therapy and " />
+  <TreatMent isChecked="False" name="diagnostics I recommended" />
+  <TreatMent isChecked="False" name="Patient is totally disabled at the present time. " />
+  <TreatMent isChecked="False" name="Patient maintains a partial disability. 
+The patient understands should they need to see me sooner than their next scheduled evaluation, they may call the office at any time to move up their apartment.
+" />
+
+
+
+</TreatMents>

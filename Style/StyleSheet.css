@@ -1,0 +1,280 @@
+﻿
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 px 1px r 0 bo - 1px rgba 0, 0, .pane - pa ding 15px .pan l-hading
+
+{
+    px 15px;
+    b rder olid transparent;
+    o px;
+    border-to-right-radius: 3 x .pane r down-toggle color: i he
+}
+
+
+ma
+mar
+:
+
+font-size: 6 x;
+: inherit;
+}
+
+nel-title > s al .panel-tit e > .sma .pane - itle,
+-title > small,
+. > small > a {
+    color: inheit;
+    .panel footer
+
+{
+    padding: 10 x 1px;
+    nd-color: #f5f5f5;
+    x solid #ddd;
+    bord r 3px;
+    bo m-left r dius: 3px;
+}
+
+st-group,
+> .lis - roup {
+    margin-bo
+}
+
+.pa e > .list-grup .list-group-i e
+anel > .panel colap
+list-group-ite {
+    1px 0 border-adius: 0;
+}
+
+nel > l st-group:first- h ld .list-group-item:firt-child,
+.panel >
+.list-grou :f
+roup-item:first-child {
+    r-top: 0;
+    bo r border-top-right-rdius: 3px;
+}
+
+panel list-group:last c ild .list-group-item:lst-child,
+.pan l > .list-group la
+up-item:last-child {
+    m: 0;
+    bor er-b d b rder-bottomleft-radius: 3px;
+    .panel-heading + li l em:first-ch l
+
+{
+    dth: 0;
+    . .pane - ooter
+
+{
+    bord th: 0;
+    .pa e > .panel-collaps .tabl, el > .table, l sive > . able
+
+{
+    margn-bottom
+}
+
+.panel pse > t ble caption,
+panel > .
+.pan l > .
+.table capti n {
+    15px;
+    padding-left: 1 p;
+}
+
+panel table-responsive:f r
+first-child,
+.p
+t-child {
+    bo r border-top-right-radius: 3px;
+}
+
+.panel > .table-responsi table: i st-child > tbody:first-child r:first-child,
+.panel > .table-responsi table: i st-child > thead:f r t-child > tr:firs - hild,
+table: i st-child > tbody:f r t-child > tr:firs - hild,
+:first-child > thead:fi st-c {
+    b rder 3 borde - op-right-radius: 3px;
+}
+
+.panel > .table-responsve:first-child tbody f rst-child > tr:first-child td f rst-child,
+.panel > .table-responsve:first-child tbody f rst-child > tr:first-child th f rst-child,
+.panel > .table-responsve:first-child thead f rst-child > tr:first-child td f rst-child,
+.panel > .table-responsve:first-child thead f rst-child > tr:fir t child th:first-ch l,
+.panel tbody f rst-child > tr:fir t child td:first-ch l,
+.panel tbody f rst-child > tr:fir t child th:first-ch l,
+.panel thead f rst-child > tr:fir t child td:first-ch l,
+.panel >
+d:first-child > tr:firs -chi
+
+rder-t p left-radius: 3px;
+}
+
+.panel > .table-responsve:first-child > tbod : irst-child > tr:first-child t : ast-child,
+.panel > .table-responsve:first-child > tbod : irst-child > tr:first-child t : ast-child,
+.panel > .table-responsve:first-child > thea : irst-child > tr:first-child t : ast-child,
+.panel > .table-responsve:first-child > thea : irst-child > tr:fi s -child th:last-ch l,
+.panel > tbod : irst-child > tr:fi s -child td:last-ch l,
+.panel > tbod : irst-child > tr:fi s -child th:last-ch l,
+.panel > thea : irst-child > tr:fi s -child td:last-ch l,
+.pane
+ad:first-child > tr:firs -chi
+
+b r er-top-right-radius: 3px;
+}
+
+.pane .table-responsiv :
+e:last-child,
+pane
+ild {
+    bor er-b d b rder-bottom-left-radius: 3px
+}
+
+.pa e > .table-resp > .tab e last-child > tbody:last-chil tr:last-child,
+.pa e > .table-resp > .tab e last-child > tfoo : ast-child > tr:l s -child,
+> .tab e last-child > tbod : ast-child > tr:l s -child,
+ble:last-child > tfoot:last chil
+border- otto
+x
+
+order- o tom-left-radius: 3px;
+}
+
+.pa e > .table-resonsive:last-chi > tbo y last-child > tr:last-child t : irst-child,
+.pa e > .table-resonsive:last-chi > tbo y last-child > tr:last-child t : irst-child,
+.pa e > .table-resonsive:last-chi > tfo t last-child > tr:last-child t : irst-child,
+.pa e > .table-resonsive:last-chi > tfo t last-child > tr:l s -child th:first- h ld,
+.pan > tbo y last-child > tr:l s -child td:first- h ld,
+.pan > tbo y last-child > tr:l s -child th:first- h ld,
+.pan > tfo t last-child > tr:l s -child td:first- h ld,
+.pa e
+oot:last-child > tr:last-c ild
+
+r-bott m left-radius: 3px;
+}
+
+.pa e > .table-resonsive:last-ch d > tb d :last-child > tr:last-child d last-child,
+.pa e > .table-resonsive:last-ch d > tb d :last-child > tr:last-child h last-child,
+.pa e > .table-resonsive:last-ch d > tf o :last-child > tr:last-child d last-child,
+.pa e > .table-resonsive:last-ch d > tf o :last-child > tr: a t-child th:last- h ld,
+.pa d > tb d :last-child > tr: a t-child td:last- h ld,
+.pa d > tb d :last-child > tr: a t-child th:last- h ld,
+.pa d > tf o :last-child > tr: a t-child td:last- h ld,
+.p n
+foot:last-child > tr:last-c ild
+
+bord r bottom-righ - adius:
+}
+
+.panel > .pa ble,
+.panel > .pa ble-re p nsive,
+.panel > .t b
+
+.pnel > .tabl
+
+o der-top: 1px soli ddd;
+.pa e > .ta l > tbody:first-ch l > tr:first-chld t
+anel > .tab e
+c
+
+rst-ch l th {
+    der-to: 0;
+}
+
+.panel >
+ed,
+>
+
+ve > . a le-bordered {
+    b r er: 0;
+    .p n l > .table-bord r d > t o y r > td:first-ch .p n l > .table-bord r d > t o y r > th:first-ch .p n l > .table-bord r d > t o t r > td:first-ch .p n l > .table-bord r d > t o t r > th:first-ch .p n l > .table-bord r d > t e d r > td:first-ch .p n l > .table-border d > thead > tr > h first c il, .p respon i e > .table-border d > tbody > tr > d first c il, .p respon i e > .table-border d > tbody > tr > h first c il, .p respon i e > .table-border d > tfoot > tr > d first c il, .p respon i e > .table-border d > tfoot > tr > h first c il, .p respon i e > .table-border d > thead > tr > d first c il, . a nsive > .tab e- a t-chil borde - ef : 0;
+    . a el > .table-bor e ed > b dy > tr > td:last-c . a el > .table-bor e ed > b dy > tr > th:last-c . a el > .table-bor e ed > f ot > tr > td:last-c . a el > .table-bor e ed > f ot > tr > th:last-c . a el > .table-bor e ed > h ad > tr > td:last-c . a el > .table-borde e > thead > tr > t :last c il, . -respo s ve > .table-borde e > tbody > tr > t :last c il, . -respo s ve > .table-borde e > tbody > tr > t :last c il, . -respo s ve > .table-borde e > tfoot > tr > t :last c il, . -respo s ve > .table-borde e > tfoot > tr > t :last c il, . -respo s ve > .table-borde e > thead > tr > t :last c il, p onsive > .tab e- a -child
+
+{
+    order r ght: 0;
+    .p n l > .table-bord r d > t o y > tr:first-c i d > .p n l > .table-bord r d > t o y > tr:first-c i d > .p n l > .table-bord r d > t e d > tr:first-c i d > .p n l > .table-border d > thead > tr:fi s -chil th, .p respon i e > .table-border d > tbody > tr:fi s -chil td, .p respon i e > .table-border d > tbody > tr:fi s -chil th, .p respon i e > .table-border d > thead > tr:fi s -chil td, . a nsive > .table bo > th b rder- o tom: 0;
+    . a el > .table-bor e ed > b dy > tr:last- h ld . a el > .table-bor e ed > b dy > tr:last- h ld . a el > .table-bor e ed > f ot > tr:last- h ld . a el > .table-borde e > tfoot > tr:l s -chil th, . -respo s ve > .table-borde e > tbody > tr:l s -chil td, . -respo s ve > .table-borde e > tbody > tr:l s -chil th, . -respo s ve > .table-borde e > tfoot > tr:l s -chil td, p onsive > .tabl -b t hild > t
+
+{
+    : 0;
+    .panel . o mar i bo der: anel-group
+
+{
+    : 20px;
+    panel-group .p nel;
+    o der-ra i
+}
+
+.
+
+
+
+margi -
+}
+
+
+l
+
+g {
+    border b ttom: 0;
+}
+
+l-group .panl-heading + .p n l-collapse > .l s -group,
+up .panel-h adig + .anel-
+b
+
+brder-top: 1px s
+}
+
+p
+
+oter {
+    bo d r-top: 0;
+}
+
+group .panel-f ote + .pnel-c
+y
+
+bo d
+solid #ddd;
+
+nel-default {
+    bord r
+}
+
+efault > .panel-h ading {
+    olor: #333;
+    g;
+    border-color ddd;
+}
+
+> .panel-heading + .pa
+n
+
+bor e -top-color: #dd;
+.pan
+ading .badge {
+    : b ckground-colo : #333;
+}
+
+fault > .panel-foote + .p > {
+    tom-color: #d d;
+    -primary
+
+{
+    border- o
+}
+
+rimary > .panel-h ading {
+    olor: #fff;
+    u order-color: # 3 ab7;
+}
+
+> .panel-heading + .panel
+-
+
+border t p-color: #337a7;
+.pan
+ading .badge {
+    :;
+    background-color: #fff;
+}

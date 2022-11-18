@@ -1,0 +1,266 @@
+﻿
+<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapLeft" #leftdiv>
+        <label class="control-label"><b>Left Shoulder Examination:</b> reveals tenderness upon palpation of the </label>
+        <input type="text" ID="txtPalpationText1Left" onchange="txtMe(this)" Style="margin-left: 0px;" />
+        <input type="checkbox" ID="chkACJointLeft" onclick="checkMe(this)" value="AC joint" />AC joint
+        <input type="checkbox" ID="chkGlenohumeralLeft" onclick="checkMe(this)" value="glenohumeral region" />glenohumeral region
+        <input type="checkbox" ID="chkCorticoidLeft" onclick="checkMe(this)" value="corticoid region" />corticoid region
+        <input type="checkbox" ID="chkSupraspinatusLeft" onclick="checkMe(this)" value="supraspintus tendon" />supraspintus tendon
+        <input type="checkbox" ID="chkScapularLeft" onclick="checkMe(this)" value="scapular region" />scapular region
+        <input type="checkbox" ID="chkDeepLabralLeft" onclick="checkMe(this)" value="deep labral region" />deep labral region
+        <label>.</label>
+        <label> There is muscle spasm present at the </label>
+        <input type="checkbox" ID="chkDeltoidLeft" onclick="checkMe(this)" value="deltoid muscle" />deltoid muscle
+        <input type="checkbox" ID="chkTrapeziusLeft" onclick="checkMe(this)" value="trapezius muscule" />trapezius muscule
+        <label>.</label>
+
+        <input type="text" id="txtNoteLeft" style="Width:300px" onchange="txtMe(this)" />
+        <br />
+        <span class="control-label"><b>Tests: </b></span>
+        <input type="checkbox" ID="chkNeerLeft" onclick="checkMe(this)" value="Neer" /> Neer
+        <input type="checkbox" ID="chkHawkinLeft" onclick="checkMe(this)" value="Hawkins" />Hawkins
+        <input type="checkbox" ID="chkYergasonsLeft" onclick="checkMe(this)" value="Yergason" />Yergason
+
+        <span> test - positive.</span>
+
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormL" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton2(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+
+    </div>
+    <br />
+    <div id="WrapRight" #rigthtdiv>
+        <label class="control-label"><b>Right Shoulder Examination:</b> reveals tenderness upon palpation of the </label>
+        <input type="text" ID="txtPalpationText1Right" onchange="txtMe(this)" Style="margin-left: 0px;" />
+
+        <input type="checkbox" ID="chkACJointRight" onclick="checkMe(this)" value="AC joint" />AC joint
+        <input type="checkbox" ID="chkGlenohumeralRight" onclick="checkMe(this)" value="glenohumeral region" />glenohumeral region
+        <input type="checkbox" ID="chkCorticoidRight" onclick="checkMe(this)" value="corticoid region" />corticoid region
+        <input type="checkbox" ID="chkSupraspinatusRight" onclick="checkMe(this)" value="supraspintus tendon" />supraspintus tendon
+        <input type="checkbox" ID="chkScapularRight" onclick="checkMe(this)" value="scapular region" />scapular region
+        <input type="checkbox" ID="chkDeepLabralRight" onclick="checkMe(this)" value="deep labral region" />deep labral region
+        <label>.</label>
+        <label> There is muscle spasm present at the </label>
+        <input type="checkbox" ID="chkDeltoidRight" onclick="checkMe(this)" value="deltoid muscle" />deltoid muscle
+        <input type="checkbox" ID="chkTrapeziusRight" onclick="checkMe(this)" value="trapezius muscule" />trapezius muscule
+        <label>.</label>
+
+        <input type="text" id="txtNoteRight" style="Width:300px" onchange="txtMe(this)" />
+        <br />
+        <span class="control-label"><b>Tests: </b></span>
+        <input type="checkbox" ID="chkNeerLeft" onclick="checkMe(this)" value="Neer" /> Neer
+        <input type="checkbox" ID="chkHawkinLeft" onclick="checkMe(this)" value="Hawkins" />Hawkins
+        <input type="checkbox" ID="chkYergasonsLeft" onclick="checkMe(this)" value="Yergason" />Yergason
+
+        <span> test - positive.</span>
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormR" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton2(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+    </div>
+</div>
+
+
+<div id="divTP">
+    <div class="row">
+        <div class="col-md-3">
+            <span class="control-label"><b><u>Trigger Point:</u></b></span>
+        </div>
+        <div class="col-md-9" style="margin-top: 5px">
+
+
+            <span>There are palpable taut bands/trigger points at </span>
+
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide1" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText1" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide2" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText2" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <td>
+                    <select ID="ddlTPSide3" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText3" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <td>
+                    <select ID="ddlTPSide4" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText4" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide5" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText5" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide6" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText6" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide7" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText7" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide8" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText8" onchange="txtMe(this)" Style="margin-left: 10px;Width:557px" />
+                </td>
+            </tr>
+        </table>
+        <div class="col-md-9" style="margin-top: 5px">
+            <span> with referral to the scapula.</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    window.load = PopulateDropDownList();
+
+    function PopulateDropDownList() {
+
+
+        var ddl1 = document.getElementById("ddlTPSide1");
+        if (ddl1.options.length === 0) {
+            var ddl2 = document.getElementById("ddlTPSide2");
+            var ddl3 = document.getElementById("ddlTPSide3");
+            var ddl4 = document.getElementById("ddlTPSide4");
+            var ddl5 = document.getElementById("ddlTPSide5");
+            var ddl6 = document.getElementById("ddlTPSide6");
+            var ddl7 = document.getElementById("ddlTPSide7");
+            var ddl8 = document.getElementById("ddlTPSide8");
+
+            ddl1.options.length = 0;
+            ddl2.options.length = 0;
+            ddl3.options.length = 0;
+            ddl4.options.length = 0;
+            ddl5.options.length = 0;
+            ddl6.options.length = 0;
+            ddl7.options.length = 0;
+            ddl8.options.length = 0;
+
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+                //var $xml = $(xmlDoc);
+                var TPSides = $(res).find("sTPSides");
+                var Rom = $(TPSides).find("TPSide");
+
+
+                for (var i = 0; i < Rom.length; i++) {
+                    var option1 = document.createElement("option");
+                    var option2 = document.createElement("option");
+                    var option3 = document.createElement("option");
+                    var option4 = document.createElement("option");
+                    var option5 = document.createElement("option");
+                    var option6 = document.createElement("option");
+                    var option7 = document.createElement("option");
+                    var option8 = document.createElement("option");
+
+
+
+                    //Set Customer Name in Text part.
+                    option1.text = Rom[i].getAttribute('name');
+                    option2.text = Rom[i].getAttribute('name');
+                    option3.text = Rom[i].getAttribute('name');
+                    option4.text = Rom[i].getAttribute('name');
+                    option5.text = Rom[i].getAttribute('name');
+                    option6.text = Rom[i].getAttribute('name');
+                    option7.text = Rom[i].getAttribute('name');
+                    option8.text = Rom[i].getAttribute('name');
+
+                    option1.value = Rom[i].getAttribute('name');
+                    option2.value = Rom[i].getAttribute('name');
+                    option3.value = Rom[i].getAttribute('name');
+                    option4.value = Rom[i].getAttribute('name');
+                    option5.value = Rom[i].getAttribute('name');
+                    option6.value = Rom[i].getAttribute('name');
+                    option7.value = Rom[i].getAttribute('name');
+                    option8.value = Rom[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddl1.options.add(option1);
+                    ddl2.options.add(option2);
+                    ddl3.options.add(option3);
+                    ddl4.options.add(option4);
+                    ddl5.options.add(option5);
+                    ddl6.options.add(option6);
+                    ddl7.options.add(option7);
+                    ddl8.options.add(option8);
+                }
+            });
+        }
+    }
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function startButton2(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>

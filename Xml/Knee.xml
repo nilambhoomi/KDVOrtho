@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ROMS>
+  <ROM>
+    <name>flexion</name>
+    <left></left>
+    <right></right>
+    <normal>135</normal>
+  </ROM>
+  <ROM>
+    <name>extension</name>
+    <left></left>
+    <right></right>
+    <normal>0</normal>
+  </ROM>
+</ROMS>

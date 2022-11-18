@@ -1,0 +1,53 @@
+﻿<div id="bodyui" style="margin-top: 15px">
+
+
+
+   <span> <b>SOCIAL HISTORY: </b></span><br />
+    <label>
+        The patient denies
+    </label>
+    <input type='checkbox' ID="chkDeniessmoking" value="smoking" onclick="checkMe(this)" checked="checked" />
+    smoking,
+    <input type='checkbox' ID="chkDeniesdrinking" value="drinking" onclick="checkMe(this)" checked="checked" />
+    drinking,
+    <input type='checkbox' ID="chkDeniesdrugs" value="drugs" onclick="checkMe(this)" checked="checked" />
+    drugs,
+    <input type='checkbox' ID="chkSocialdrinking" value="social drinking" onclick="checkMe(this)" />
+    social drinking
+    <label>.</label>
+
+    <!-- <label>The patient admits to using </label> -->
+    <!-- <input type='checkbox' ID="chkAgreesMarijuana" value="marijuana" onclick="checkMe(this)" /> -->
+    <!-- marijuana, -->
+    <!-- <input type='checkbox' ID="chkAgreesHeroin" value="heroin" onclick="checkMe(this)" /> -->
+    <!-- heroin, -->
+    <!-- <input type='checkbox' ID="chkAgreesCocaine" value="cocaine" onclick="checkMe(this)" /> -->
+    <!-- cocaine, -->
+    <!-- <input type="text" id="txtAgreesDrugs" onchange="txtMe(this)" /> -->
+    <!-- <label>.</label> -->
+
+</div>
+
+<script type="text/javascript">
+
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+</script>

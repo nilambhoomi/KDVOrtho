@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ROMS>
+  <ROM>
+    <name>Palmar Flexion</name>
+    <left></left>
+    <right></right>
+    <normal>90</normal>
+  </ROM>
+  <ROM>
+    <name>Dorsiflexion</name>
+    <left></left>
+    <right></right>
+    <normal>70</normal>
+  </ROM>
+  <ROM>
+    <name>Ulnar deviation </name>
+    <left></left>
+    <right></right>
+    <normal>30</normal>
+  </ROM>
+  <ROM>
+    <name>Radial deviation</name>
+    <left></left>
+    <right></right>
+    <normal>20</normal>
+  </ROM>
+</ROMS>

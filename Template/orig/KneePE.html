@@ -1,0 +1,124 @@
+﻿<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapLeft" #leftdiv>
+        <label class="control-label"><b>Left Knee Examination:</b> reveals tenderness upon palpation of the </label>
+        <input type="text" ID="txtPalpationText1Left" onchange="txtMe(this)" Style="margin-left: 0px;" />
+        <input type="checkbox" ID="chkMedialLeft" onclick="checkMe(this)" value="medial" />medial
+        <input type="checkbox" ID="chkLateralLeft" onclick="checkMe(this)" value="lateral" />lateral
+        <input type="checkbox" ID="chkSuperiorLeft" onclick="checkMe(this)" value="superior" />superior
+        <input type="checkbox" ID="chkInferiorLeft" onclick="checkMe(this)" value="inferior" />inferior
+        <input type="checkbox" ID="chkSupermedialLeft" onclick="checkMe(this)" value="superomedial" />superomedial
+        <input type="checkbox" ID="chkSuperoLateralLeft" onclick="checkMe(this)" value="superolateral" />superolateral
+        <input type="checkbox" ID="chkInferomedialLeft" onclick="checkMe(this)" value="inferomedial" />inferomedial
+        <input type="checkbox" ID="chkInferoLateralLeft" onclick="checkMe(this)" value="inferolateral" />inferolateral
+        <input type="checkbox" ID="chkPeripatellarLeft" onclick="checkMe(this)" value="peripatellar" />peripatellar
+        <label>.</label>
+
+        <br />
+        <span class="control-label"><b>Tests:</b></span>
+        <input type="checkbox" ID="chkMcMurrayLeft" onclick="checkMe(this)" value="McMurray's" />McMurray
+        <input type="checkbox" ID="chkLachmanLeft" onclick="checkMe(this)" value="Lachman's" />Lachman
+        <input type="checkbox" ID="chkAnteriorLeft" onclick="checkMe(this)" value="Anterior drawer" />Anterior drawer
+        <input type="checkbox" ID="chkPosteriorLeft" onclick="checkMe(this)" value="Posterior drawer" />Posterior drawer
+        <input type="checkbox" ID="chkVarusLeft" onclick="checkMe(this)" value="Varus stress" />Varus stress
+        <input type="checkbox" ID="chkValgusLeft" onclick="checkMe(this)" value="Valgus stress" />Valgus stress
+        <span> test - positive.</span>
+        <br />
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormL" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+
+    </div>
+
+    <br />
+    <div id="WrapRight" #rigthtdiv>
+        <label class="control-label"><b>Right Knee Examination:</b> reveals tenderness upon palpation of the&nbsp;</label>
+        <input type="text" ID="txtPalpationText1Right" onchange="txtMe(this)" Style="margin-Right: 0px;" />
+        <input type="checkbox" ID="chkMedialRight" onclick="checkMe(this)" value="medial" />medial
+        <input type="checkbox" ID="chkLateralRight" onclick="checkMe(this)" value="lateral" />lateral
+        <input type="checkbox" ID="chkSuperiorRight" onclick="checkMe(this)" value="superior" />superior
+        <input type="checkbox" ID="chkInferiorRight" onclick="checkMe(this)" value="inferior" />inferior
+        <input type="checkbox" ID="chkSupermedialRight" onclick="checkMe(this)" value="superomedial" />superomedial
+        <input type="checkbox" ID="chkSuperoLateralRight" onclick="checkMe(this)" value="superolateral" />superolateral
+        <input type="checkbox" ID="chkInferomedialRight" onclick="checkMe(this)" value="inferomedial" />inferomedial
+        <input type="checkbox" ID="chkInferoLateralRight" onclick="checkMe(this)" value="inferolateral" />inferolateral
+        <input type="checkbox" ID="chkPeripatellarRight" onclick="checkMe(this)" value="peripatellar" />peripatellar
+        <label>.</label>
+
+        <br />
+        <span class="control-label"><b>Tests: </b></span>
+        <input type="checkbox" ID="chkMcMurrayLeft" onclick="checkMe(this)" value="McMurray" />McMurray
+        <input type="checkbox" ID="chkLachmanLeft" onclick="checkMe(this)" value="Lachman" />Lachman
+        <input type="checkbox" ID="chkAnteriorLeft" onclick="checkMe(this)" value="Anterior drawer" />Anterior drawer
+        <input type="checkbox" ID="chkPosteriorLeft" onclick="checkMe(this)" value="Posterior drawer" />Posterior drawer
+        <input type="checkbox" ID="chkVarusLeft" onclick="checkMe(this)" value="Varus stress" />Varus stress
+        <input type="checkbox" ID="chkValgusLeft" onclick="checkMe(this)" value="Valgus stress" />Valgus stress
+        <span> test - positive.</span>
+        <br />
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormR" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+    </div>
+
+</div>
+
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+</script>

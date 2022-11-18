@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HSM>
+  <StandardColors>
+    <StandardColor text="Procedure:" color="Green"/>
+    <StandardColor text="Request" color="Yellow"/>
+    <StandardColor text="Diagnostic" color="Red"/>
+    <StandardColor text="Schedule" color="Orange"/>
+  </StandardColors>
+  <Compensations>
+    <Compensation name=""/>
+    <Compensation name="MM"/>
+    <Compensation name="NF"/>
+    <Compensation name="Lien"/>
+    <Compensation name="WC"/>
+    <Compensation name="Taxi"/>
+  </Compensations>
+
+  <Handednesses>
+    <Handedness name="right-handed"/>
+    <Handedness name="left-handed"/>
+    <Handedness name="ambidextrous"/>
+    <Handedness name=""/>
+  </Handednesses>
+
+  <Sustaineds>
+    <Sustained name="" CaseType=""/>
+    <Sustained name="presents with complaints of pain in the" CaseType="MM"/>
+    <Sustained name="presents for the evaluation of the injuries sustained in a motor vehicle accident" CaseType="Taxi,NF"/>
+    <Sustained name="presents for the evaluation of the injuries sustained as a pedestrian struck" CaseType=""/>
+    <Sustained name="presents for the evaluation of the injuries sustained as a cyclist struck" CaseType=""/>
+    <Sustained name="presents for the evaluation of the injuries sustained in a Work Related Incident"  CaseType="WC"/>
+    <Sustained name="presents for the evaluation of the injuries sustained slip and fall" CaseType=""/>
+  </Sustaineds>
+
+  <TPSides>
+    <TPSide name=""/>
+    <TPSide name="Left"/>
+    <TPSide name="Right"/>
+    <TPSide name="Bilateral"/>
+  </TPSides>
+
+  <sTPSides>
+    <TPSide name=""/>
+    <TPSide name="left"/>
+    <TPSide name="right"/>
+    <TPSide name="bilateral"/>
+  </sTPSides>
+
+  <Scans>
+    <Scan name=""/>
+    <Scan name="MRI"/>
+    <Scan name="CT Scan"/>
+    <Scan name="X-rays"/>
+  </Scans>
+
+  <ScanOthers>
+    <ScanOther name=""/>
+    <ScanOther name="MRI"/>
+    <ScanOther name="CT Scan"/>
+    <ScanOther name="X-rays"/>
+    <ScanOther name="UE NCV/EMG"/>
+    <ScanOther name="LE NCV/EMG"/>
+  </ScanOthers>
+
+  <Levels>
+    <Level name=""/>
+    <Level name="bilaterally with muscle spasm present."/>
+    <Level name="right with muscle spasm present."/>
+    <Level name="left with muscle spasm present."/>
+    <Level name="bilaterally with muscle spasm present, right greater than left."/>
+    <Level name="bilaterally with muscle spasm present, left greater than right."/>
+  </Levels>
+
+  <WasAts>
+    <WasAt name=""/>
+    <WasAt name="restrained driver"/>
+    <WasAt name="front seat passenger"/>
+    <WasAt name="right rear passenger"/>
+    <WasAt name="left rear passenger"/>
+  </WasAts>
+
+  <InvolvedIns>
+    <InvolvedIn name=""/>
+    <InvolvedIn name="rear end"/>
+    <InvolvedIn name="head on"/>
+    <InvolvedIn name="driver’s side front"/>
+    <InvolvedIn name="driver’s side rear"/>
+    <InvolvedIn name="passenger side front"/>
+    <InvolvedIn name="passenger side rear"/>
+    <InvolvedIn name="T-boned"/>
+    <InvolvedIn name="driver side T-bone"/>
+    <InvolvedIn name="passenger side T-bone"/>
+  </InvolvedIns>
+
+  <ESMTeams>
+    <ESMTeam name=""/>
+    <ESMTeam name="arrived"/>
+    <ESMTeam name="did not arrive at the scene"/>
+  </ESMTeams>
+
+  <Vias>
+    <Via name=""/>
+    <Via name="ambulance"/>
+  </Vias>
+
+  <Times>
+    <Time name=""/>
+    <Time name="undetermined time"/>
+    <Time name="seconds"/>
+    <Time name="minutes"/>
+    <Time name="hours"/>
+  </Times>
+
+  <WorksAts>
+    <WorksAt name=""/>
+    <WorksAt name="Unknown"/>
+    <WorksAt name="Patient works as"/>
+    <WorksAt name="Patient does not work"/>
+    <WorksAt name="Patient is a student"/>
+    <WorksAt name="Patient is retired"/>
+  </WorksAts>
+
+  <WorkStatuss>
+    <WorkStatus name=""/>
+    <WorkStatus name="Patient has not returned since the accident.---"/>
+    <WorkStatus name="Patient has continued work despite the pain."/>
+  </WorkStatuss>
+
+  <Results>
+    <Result name=""/>
+    <Result name="negative"/>
+    <Result name="positive"/>
+  </Results>
+
+  <GAITs>
+    <GAIT name=""/>
+    <GAIT name="Normal"/>
+    <GAIT name="Antalgic"/>
+    <GAIT name="Nonantalgic"/>
+  </GAITs>
+
+  <Ambulatess>
+    <Ambulates name=""/>
+    <Ambulates name="Ambulates with a cane"/>
+    <Ambulates name="Ambulates with a straight access cane"/>
+    <Ambulates name="Ambulates with a quad cane"/>
+    <Ambulates name="Ambulates with a walker"/>
+    <Ambulates name="Ambulates with a rolling walker"/>
+    <Ambulates name="Ambulates with a crutch"/>
+    <Ambulates name="Ambulates with crutches"/>
+    <Ambulates name="Ambulates with a wheelchair"/>
+  </Ambulatess>
+
+  <ROMs>
+    <ROM name="mildly decreased. "/>
+    <ROM name="moderately decreased. "/>
+    <ROM name="severely decreased. "/>
+  </ROMs>
+
+  <BodyParts>
+    <BodyPart name="" />
+    <BodyPart name="Neck" />
+    <BodyPart name="MidBack" />
+    <BodyPart name="LowBack" />
+    <BodyPart name="Shoulder" />
+    <BodyPart name="Knee" />
+    <BodyPart name="Elbow" />
+    <BodyPart name="Wrist" />
+    <BodyPart name="Hip" />
+    <BodyPart name="Ankle" />
+    <BodyPart name="Arm" />
+    <BodyPart name="Hand" />
+    <BodyPart name="Leg" />
+    <BodyPart name="Foot" />
+    <BodyPart name="Face" />
+    <BodyPart name="Rib" />
+    <BodyPart name="Chest" />
+    <BodyPart name="Abdomen" />
+    <BodyPart name="Pelvis" />
+  </BodyParts>
+
+  <Radiates>
+    <Radiate name=""/>
+    <Radiate name="does not radiate"/>
+    <Radiate name="radiates to the left side"/>
+    <Radiate name="radiates to the right side"/>
+    <Radiate name="radiates bilaterally"/>
+  </Radiates>
+
+  <NeurologicalExams>
+    <NeurologicalExam name="hyperalgesia" ikey="1"></NeurologicalExam>
+  </NeurologicalExams>
+  <NeurologicalExams>
+    <NeurologicalExam name="hypoesthesia" ikey="2"></NeurologicalExam>
+  </NeurologicalExams>
+  <NeurologicalExams>
+    <NeurologicalExam name="dysesthesia" ikey="3"></NeurologicalExam>
+  </NeurologicalExams>
+  <NeurologicalExams>
+    <NeurologicalExam name="allodynia" ikey="4"></NeurologicalExam>
+  </NeurologicalExams>
+  <ShoulderAbdNormal><Data>180</Data>
+  </ShoulderAbdNormal>
+  <ShoulderFlexNormal><Data>180</Data>
+  </ShoulderFlexNormal>
+  <ShoulderExtRotNormal><Data>90</Data>
+  </ShoulderExtRotNormal>
+  <ShoulderIntRot><Data>90</Data>
+  </ShoulderIntRot>
+  <NeckFwdFlexNormal><Data>50</Data>
+  </NeckFwdFlexNormal>
+  <NeckExtNormal><Data>60</Data>
+  </NeckExtNormal>
+  <NeckRotNormal><Data>80</Data>
+  </NeckRotNormal>
+  <NeckLatFlex><Data>45</Data>
+  </NeckLatFlex>
+  <LowBackFwdFlexNormal><Data>90</Data>
+  </LowBackFwdFlexNormal>
+  <LowBackExt><Data>25</Data>
+  </LowBackExt>
+  <LowBackRotNormal><Data>30</Data>
+  </LowBackRotNormal>
+  <LowBackLatFlex><Data>25</Data>
+  </LowBackLatFlex>
+  <KneeExtNormal><Data>0</Data>
+  </KneeExtNormal>
+  <KneeFlexNormal><Data>130</Data>
+  </KneeFlexNormal>
+  <HipFlexNormal><Data>120</Data>
+  </HipFlexNormal>
+  <HipIRNormal><Data>35</Data>
+  </HipIRNormal>
+  <HipERNormal><Data>45</Data>
+  </HipERNormal>
+
+  <USStates>
+    <State name="" />
+    <State name="AK" />
+    <State name="AL" />
+    <State name="AR" />
+    <State name="AZ" />
+    <State name="CA" />
+    <State name="CO" />
+    <State name="CT" />
+    <State name="DC" />
+    <State name="DE" />
+    <State name="FL" />
+    <State name="GA" />
+    <State name="HI" />
+    <State name="IA" />
+    <State name="ID" />
+    <State name="IL" />
+    <State name="IN" />
+    <State name="KS" />
+    <State name="KY" />
+    <State name="LA" />
+    <State name="MA" />
+    <State name="MD" />
+    <State name="ME" />
+    <State name="MI" />
+    <State name="MN" />
+    <State name="MO" />
+    <State name="MS" />
+    <State name="MT" />
+    <State name="NC" />
+    <State name="ND" />
+    <State name="NE" />
+    <State name="NH" />
+    <State name="NJ" />
+    <State name="NM" />
+    <State name="NV" />
+    <State name="NY" />
+    <State name="OH" />
+    <State name="OK" />
+    <State name="OR" />
+    <State name="PA" />
+    <State name="RI" />
+    <State name="SC" />
+    <State name="SD" />
+    <State name="TN" />
+    <State name="TX" />
+    <State name="UT" />
+    <State name="VA" />
+    <State name="VT" />
+    <State name="WA" />
+    <State name="WI" />
+    <State name="WV" />
+    <State name="WY" />
+  </USStates>
+
+  <RTNWORKS>
+    <RTNWORK name=""/>
+    <RTNWORK name="patient returns to work on "/>
+    <RTNWORK name="Patient continues to work despite the pain. "/>
+    <RTNWORK name="patient has not returned to work since the accident."/>
+  </RTNWORKS>
+
+  <RECTPYS>
+    <RECTPY name=""/>
+    <RECTPY name="Patient continues physical therapy and finds it beneficial."/>
+    <RECTPY name="Patient continues physical therapy and finds it beneficial, however pain returns between sessions."/>
+    <RECTPY name="The patient came in for a follow-up orthopedic treatment."/>
+  </RECTPYS>
+
+  <FEELPAINRLFS>
+    <FEELPAINRLF name=""/>
+    <FEELPAINRLF name="Patient states that there is pain relief following physical therapy."/>
+  </FEELPAINRLFS>
+
+  <Users>
+    <Desig name=""/>
+    <Desig name="Administrator"/>
+    <Desig name="MA"/>
+    <Desig name="PA/NP"/>
+    <Desig name="Front Desk"/>
+    <Desig name="Attorney or Ref.Doctor"/>
+    <Desig name="Patient"/>
+    <Desig name="Ins.Co"/>
+  </Users>
+</HSM>

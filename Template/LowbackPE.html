@@ -1,0 +1,231 @@
+﻿
+<div class="col-md-9 row" style="margin-top: 5px">
+    <textarea id="txtFreeForm" Style="width:700px;height:100px" onchange="txtAreaMe(this)" Text="Tender (+) interspinous region, at facets L3-4, L4-5, L5-S1 bilaterally. Axial lumbar facet loading positive bilaterally, lower back pain worse on extension and lateral rotation of the lumbar spine bilaterally. Patrick test (+) bilaterally. Kemp test (+) bilaterally. Lumbar rigidity (+). Muscle spasms (+). Trigger points identified at bilateral lumbar paraspinal muscles - taut bands with discrete, hyperirritable, tender spots, with palpation induced muscle twitches and pain referred to buttocks"></textarea>
+
+</div>
+
+<style>
+
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+<script type="text/javascript">
+
+    window.load = disableTableDefault();
+
+    function disableTableDefault() {
+        $('#tblLB1').find("*").attr("disabled", "disabled");
+        $('#tblLB2').find("*").attr("disabled", "disabled");
+    }
+
+    function PopulateDropDownList() {
+
+
+        //var ddl1 = document.getElementById("ddlTPSide1");
+        //if (ddl1.options.length === 0) {
+
+        //    var ddl2 = document.getElementById("ddlTPSide2");
+        //    var ddl3 = document.getElementById("ddlTPSide3");
+        //    var ddl4 = document.getElementById("ddlTPSide4");
+
+
+        //    ddl1.length.options = 0;
+        //    ddl2.length.options = 0;
+        //    ddl3.length.options = 0;
+        //    ddl4.length.options = 0;
+
+
+        //    $.get('/xml/HSMData.xml', function (res) {
+
+        //        //var $xml = $(xmlDoc);
+
+        //        // Find Person Tag
+        //        var TPSides = $(res).find("sTPSides");
+        //        var Rom = $(TPSides).find("TPSide");
+
+
+
+        //        for (var i = 0; i < Rom.length; i++) {
+        //            var option1 = document.createElement("option");
+        //            var option2 = document.createElement("option");
+        //            var option3 = document.createElement("option");
+        //            var option4 = document.createElement("option");
+
+
+
+        //            //Set Customer Name in Text part.
+        //            option1.text = Rom[i].getAttribute('name');
+        //            option2.text = Rom[i].getAttribute('name');
+        //            option3.text = Rom[i].getAttribute('name');
+        //            option4.text = Rom[i].getAttribute('name');
+
+        //            option1.value = Rom[i].getAttribute('name');
+        //            option2.value = Rom[i].getAttribute('name');
+        //            option3.value = Rom[i].getAttribute('name');
+        //            option4.value = Rom[i].getAttribute('name');
+
+        //            //Add the Option element to DropDownList.
+        //            ddl1.options.add(option1);
+        //            ddl2.options.add(option2);
+        //            ddl3.options.add(option3);
+        //            ddl4.options.add(option4);
+
+        //        }
+        //    });
+
+
+        //    // var ddlLevels1 = document.getElementById("ddlLevels1");
+        //    // var ddlLevels2 = document.getElementById("ddlLevels2");
+        //    // var ddlLevels3 = document.getElementById("ddlLevels3");
+
+        //    //  ddlLevels1.options.length = 0;
+        //    //   ddlLevels2.options.length = 0;
+        //    //  ddlLevels3.options.length = 0;
+
+        //    $.get('/xml/HSMData.xml', function (res) {
+
+        //        //var $xml = $(xmlDoc);
+
+
+        //        // var Levels = $(res).find("Level");
+
+
+        //        //for (i = 0; i < Levels.length; i++) {
+        //        //     var optionLevels = document.createElement("option");
+
+
+        //        //     //Set Customer Name in Text part.
+        //        //     optionLevels.text = Levels[i].getAttribute('name');
+        //        //     optionLevels.value = Levels[i].getAttribute('name');
+
+
+        //        //     //Add the Option element to DropDownList.
+        //        //     ddlLevels1.options.add(optionLevels);
+
+        //        //     var optionLevels2 = document.createElement("option");
+
+        //        //     //Set Customer Name in Text part.
+        //        //     optionLevels2.text = Levels[i].getAttribute('name');
+        //        //     optionLevels2.value = Levels[i].getAttribute('name');
+
+
+        //        //     //Add the Option element to DropDownList.
+        //        //     ddlLevels2.options.add(optionLevels2);
+
+        //        //     var optionLevels3 = document.createElement("option");
+
+        //        //     //Set Customer Name in Text part.
+        //        //     optionLevels3.text = Levels[i].getAttribute('name');
+        //        //     optionLevels3.value = Levels[i].getAttribute('name');
+
+
+        //        //     //Add the Option element to DropDownList.
+        //        //     ddlLevels3.options.add(optionLevels3);
+
+
+        //        // }
+        //    });
+        //}
+    }
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+    }
+
+    function checkBilateral(chk, chkleft, checkright, txtleft, txtright) {
+        debugger
+        $('#' + checkright).prop("disabled", $(chk).prop("checked"));
+        $('#' + chkleft).prop("disabled", $(chk).prop("checked"));
+        if (txtleft !== '') {
+            $('#' + txtleft).prop("disabled", $(chk).prop("checked"));
+            $('#' + txtright).prop("disabled", $(chk).prop("checked"));
+        }
+    }
+
+    function selectTestCHK(chkid, val) {
+
+        if (val !== '')
+            $("#" + chkid).attr("checked", "checked");
+        else
+            $("#" + chkid).removeAttr("checked");
+    }
+
+
+    function writeTPtxt() {
+
+
+
+        var str = $('#txtTP').val();
+
+        var strspan = " On exam, patient has taut tender bands in the  #txtmsg muscles. ";
+        strspan = strspan.replace('#txtmsg', str);
+
+
+        if (str !== '')
+            $('#hidTPText').val(strspan);
+        else
+            $('#hidTPText').val('');
+
+        $('#ctl00_ContentPlaceHolder1_hdPETP').val(strspan);
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton2(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>

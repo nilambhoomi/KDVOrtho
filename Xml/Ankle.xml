@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ROMS>
+  <ROM>
+    <name>Flexion</name>
+    <left></left>
+    <right></right>
+    <normal>120</normal>
+  </ROM>
+  <ROM>
+    <name>Extension</name>
+    <left></left>
+    <right></right>
+    <normal>30</normal>
+  </ROM>
+
+  <ROM>
+    <name>Abduction</name>
+    <left></left>
+    <right></right>
+    <normal>45</normal>
+  </ROM>
+  <ROM>
+    <name>Adduction</name>
+    <left></left>
+    <right></right>
+    <normal>30</normal>
+  </ROM>
+
+  <ROM>
+    <name>Internal rotation</name>
+    <left></left>
+    <right></right>
+    <normal>45</normal>
+  </ROM>
+  <ROM>
+    <name>External rotation</name>
+    <left></left>
+    <right></right>
+    <normal>45</normal>
+  </ROM>
+</ROMS>

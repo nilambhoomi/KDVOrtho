@@ -1,0 +1,337 @@
+﻿
+<!--
+<h4 class="labelcolor">Complaints</h4>
+<hr />
+
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="15" ID="chk_depression" Value="Depression " clicked onclick="checkMe(this)" />depression
+    </div>
+
+    <div class="span3">
+        <input type='checkbox' TabIndex="16" ID="chk_dizziness" Value="Dizziness" onclick="checkMe(this)" />dizziness
+    </div>
+
+    <div class="span3">
+        <input type='checkbox' TabIndex="17" ID="chk_headaches" Value="Headaches" onclick="checkMe(this)" />headaches
+    </div>
+
+
+    <div style="clear: both"></div>
+</div>
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="19" ID="chk_nausea" Value="Nausea" onclick="checkMe(this)" />nausea
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="20" ID="chk_numbness_in_arm" Value="Numbness in Arm / Hand" onclick="checkMe(this)" />numbness in arm/hand
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="21" ID="chk_numbess_in_leg" Value="Numbness in Leg" onclick="checkMe(this)" />numbness in leg
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="22" ID="chk_pain_radiating_leg" Value="Pain Radiating Down Leg" onclick="checkMe(this)" />pain radiating down leg
+    </div>
+    <div style="clear: both"></div>
+</div>
+
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="23" ID="chk_pain_radiating_shoulder" Value="Pain Radiating Down Shoulder" onclick="checkMe(this)" />pain radiating down shoulder
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="24" ID="chk_rashes" Value="Rashes" onclick="checkMe(this)" />rashes
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="25" ID="chk_anxiety" Value="Anxiety" onclick="checkMe(this)" />anxiety
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="26" ID="chk_tingling_in_arms" Value="Tingling in Arms" onclick="checkMe(this)" />tingling in arms
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="27" ID="chk_tingling_in_legs" Value="Tingling in Legs" onclick="checkMe(this)" />tingling in legs
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="28" ID="chk_vomiting" Value="Vomiting" onclick="checkMe(this)" />vomiting
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="29" ID="chk_weakness_in_arm" Value="Weakness in Arm / Hand" onclick="checkMe(this)" />weakness in arm/hand
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="30" ID="chk_weakness_in_leg" Value="Weakness in Leg" onclick="checkMe(this)" />weakness in leg
+    </div>
+    <div style="clear: both"></div>
+</div>
+<br />
+<h4>
+    Additional Complaints <a onclick="javascript:toggel()">
+        <img src="img/plus.png" />
+    </a>
+</h4>
+<hr />
+
+<div id="demo" class="collapse">
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="A_Fall_History" Value="A Fall History" onclick="checkMe(this),createText()" />a fall history
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Answering_The_Door" Value="Answering The Door" onclick="checkMe(this),createText()" />answering the door
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Appliances_Laundry_Appliances" Value="Appliances And Laundry Appliances" onclick="checkMe(this),createText()" />Appliances And Laundry Appliances
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Bending" Value="Bending" onclick="checkMe(this),createText()" />Bending
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Carrying_Large_Objects" Value="Carrying Large Objects" onclick="checkMe(this),createText()" />Carrying Large Objects
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Carrying" Value="Carrying" onclick="checkMe(this),createText()" />Carrying
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Cleaning" Value="Cleaning" onclick="checkMe(this),createText()" />Cleaning
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Cognitive_Impairment" Value="Cognitive Impairment" onclick="checkMe(this),createText()" />Cognitive Impairment
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Decrease_In_Sensitivity_To_Heat_Pain_Pressure" Value="Decrease In Sensitivity To Heat Or Pain Or Pressure" onclick="checkMe(this),createText()" />Decrease In Sensitivity To Heat Or Pain Or Pressure
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Diminished_Sense_Of_Touch" Value="Diminished Sense Of Touch" onclick="checkMe(this),createText()" />Diminished Sense Of Touch
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Doing_Laundry" Value="Doing Laundry" onclick="checkMe(this),createText()" />Doing Laundry
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Driving" Value="Driving" onclick="checkMe(this),createText()" />Driving
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Emptying_The_Mailbox" Value="Emptying The Mailbox" onclick="checkMe(this),createText()" />Emptying The Mailbox
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Getting_Dressed" Value="Getting Dressed" onclick="checkMe(this),createText()" />Getting Dressed
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Getting_In_And_Out_Of_The_Home" Value="Getting In And Out Of The Home" onclick="checkMe(this),createText()" />Getting In And Out Of The Home
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Getting_In_And_Out_Of_Bed_Chairs_Sofas" Value="Getting In And Out Of Bed Or Chairs Or Sofas" onclick="checkMe(this),createText()" />Getting In And Out Of Bed Or Chairs Or Sofas
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Hearing_Problems" Value="Hearing Problems" onclick="checkMe(this),createText()" />Hearing Problems
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Holding" Value="Holding" onclick="checkMe(this),createText()" />Holding
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Household_Chores" Value="Household Chores" onclick="checkMe(this),createText()" />Household Chores
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Incontinence" Value="Incontinence" onclick="checkMe(this),createText()" />Incontinence
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Kneeling" Value="Kneeling" onclick="checkMe(this),createText()" />Kneeling
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Lack_Of_Coordination" Value="Lack Of Coordination" onclick="checkMe(this),createText()" />Lack Of Coordination
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Lifting" Value="Lifting" onclick="checkMe(this),createText()" />Lifting
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Lifting_Heavy_Or_Bulky_Objects" Value="Lifting Heavy Or Bulky Objects" onclick="checkMe(this),createText()" />Lifting Heavy Or Bulky Objects
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Limited_Reach" Value="Limited Reach" onclick="checkMe(this),createText()" />Limited Reach
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Moving_About_In_Individual_Rooms" Value="Moving About In Individual Rooms" onclick="checkMe(this),createText()" />Moving About In Individual Rooms
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Moving_From_One_Room_To_Another" Value="Moving From One Room To Another" onclick="checkMe(this),createText()" />Moving From One Room To Another
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Opening_Closing_Or_Locking_Windows_And_Doors" Value="Opening Or Closing Or Locking Windows And Doors" onclick="checkMe(this),createText()" />Moving From One Room To Another
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Operating_Light_Switches_Faucets_Kitchen" Value="Operating Light Switches Or Faucets Or Kitchen" onclick="checkMe(this),createText()" />Operating Light Switches Or Faucets Or Kitchen
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Physical_Weakness" Value="Physical Weakness" onclick="checkMe(this),createText()" />Physical Weakness
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Playing_With_Children" Value="Playing With Children" onclick="checkMe(this),createText()" />Playing With Children
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Poor_Grip" Value="Poor Grip" onclick="checkMe(this),createText()" />Poor Grip
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Poor_Vision" Value="Poor Vision" onclick="checkMe(this),createText()" />Poor Vision
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Poor_Balance_Gait" Value="Poor Balance Or Gait" onclick="checkMe(this),createText()" />Poor Balance Or Gait
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Preparing_Meals" Value="Preparing Meals" onclick="checkMe(this),createText()" />Preparing Meals
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Pulling" Value="Pulling" onclick="checkMe(this),createText()" />Pulling
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Pushing" Value="Pushing" onclick="checkMe(this),createText()" />Pushing
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Reaching_Items_In_Closets_And_Cabinets" Value="Reaching Items In Closets And Cabinets" onclick="checkMe(this),createText()" />Reaching Items In Closets And Cabinets
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Reduced_Mobility" Value="Reduced Mobility" onclick="checkMe(this),createText()" />Reduced Mobility
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Sex_Sexual_Dysfunction" Value="Sex (Sexual Dysfunction)" onclick="checkMe(this),createText()" />Sex (Sexual Dysfunction)
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Sitting" Value="Sitting" onclick="checkMe(this),createText()" />Sitting
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Socializing" Value="Socializing" onclick="checkMe(this),createText()" />Socializing
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Sports_Activities" Value="Sports Activities" onclick="checkMe(this),createText()" />Sports Activities
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Standing" Value="Standing" onclick="checkMe(this),createText()" />Standing
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Stooping" Value="Stooping" onclick="checkMe(this),createText()" />Stooping
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Twisting" Value="Twisting" onclick="checkMe(this),createText()" />Twisting
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Use_Of_Cane_Walker_Wheelchair" Value="Use Of Cane Or Walker Or Wheelchair" onclick="checkMe(this),createText()" />Use Of Cane Or Walker Or Wheelchair
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Using_The_Stairs" Value="Using The Stairs" onclick="checkMe(this),createText()" />Using The Stairs
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Using_The_Bathtub_Or_Shower" Value="Using The Bathtub Or Shower" onclick="checkMe(this),createText()" />Using The Bathtub Or Shower
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Using_The_Kitchen" Value="Using The Kitchen" onclick="checkMe(this),createText()" />Using The Kitchen
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Using_The_Toilet" Value="Using The Toilet" onclick="checkMe(this),createText()" />Using The Toilet
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Using_The_Telephone" Value="Using The Telephone" onclick="checkMe(this),createText()" />Using The Telephone
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="span3">
+            <input type='checkbox' ID="Walking" Value="Walking" onclick="checkMe(this),createText()" />Walking
+        </div>
+        <div class="span3">
+            <input type='checkbox' ID="Working" Value="Working" onclick="checkMe(this),createText()" />Working
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <textarea ID="txt_FreeForm" style="width:90%"></textarea>
+    <br />
+    .<br />
+
+</div>
+
+
+<script>
+    function createText() {
+        var str = "";
+        $('#demo input:checkbox').each(function () {
+            var sThisVal = (this.checked ? $(this).val() : "");
+            if (sThisVal !== "")
+                str = str + "," + sThisVal;
+        });
+        $('#txt_FreeForm').text(str.slice(1));
+
+    }
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+</script>
+-->

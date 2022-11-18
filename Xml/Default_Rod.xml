@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rods>
+  <Rod  isChecked="True" readonly="True" width="138%" isnewline="0" name="##Name## arrives today at our office located at 24 Bradley Avenue on Staten Island, for review of diagnostic studies. 
+
+The patient has been treating at our office since ##IEdate## for injuries sustained in a ##cause## that occurred on ##DOA##. The patient was recently re-evaluated on ##FUVisitdate## and is here today only to review the testing. The patient underwent the following studies with results as follows: 
+" />
+  <Rod  isChecked="False" width="30%"  bodypart="cervicalspine-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the cervical spine revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="thoracicpine-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the thoracic spine revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="lumbarspine-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the lumbar spine revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="headbrain-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the head/brain revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="leftshoulder-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the left shoulder revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="rightshoulder-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the right shoulder revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="leftwrist-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the left wrist revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="leftankle-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the left ankle revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="rightankle-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the right ankle revealed ______" />
+  <Rod  isChecked="False" width="30%" bodypart="miscellaneous-b" isnewline="1" readonly="false" name="On ___mm/dd/yy___ MRI study of the _________ revealed ______" />
+  <Rod  isChecked="True" readonly="false" isnewline="1" name="The above-referenced test results were reviewed with the patient." />
+  <Rod  isChecked="True" readonly="false" isnewline="1" name="Plan: " />
+  <Rod  isChecked="False" width="138%" bodypart="cervicalspine-p" isnewline="1" readonly="false" name="I recommend that the patient be scheduled for EMG/NCV studies of the bilateral upper extremities, to assess for the unnatural cause if the patient's continued decrease in motion of the cervical spine, as well as the patient has persistent urological defects and continued complaints all noted on the recent re-evaluation that occurred on ##DOA##. Once the testing is obtained and reviewed, this will assist in deciding the most beneficial future plan of treatment for the patient by means of pain management Interventions  most suitable. The patient is scheduled for a routine re-evaluation on ___mm/dd/yy___, but understands should he/she need to see me sooner, he/she may phone the office at any time to move up their appointment" />
+  <Rod  isChecked="False"  width="138%" bodypart="thoracicpine-p" isnewline="1" readonly="false" name="" />
+  <Rod  isChecked="False"  width="138%" bodypart="lumbarspine-p" isnewline="1" readonly="false" name="I recommend that the patient be scheduled for EMG/NCV studies of the bilateral lower extremities, to assess for the unnatural cause if the patient's continued decrease in motion of the lumbar spine, as well as the patient has persistent urological defects and continued complaints all noted on the recent re-evaluation that occurred on ##DOA##. Once the testing is obtained and reviewed, this will assist in deciding the most beneficial future plan of treatment for the patient by means of pain management Interventions  most suitable. The patient is scheduled for a routine re-evaluation on __mm/dd/yy__, but understands should he/she need to see me sooner, he/she may phone the office at any time to move up their appointment. " />
+  <Rod  isChecked="False"  width="138%" bodypart="headbrain-p" isnewline="1" readonly="false" name="I recommend that the patient consult with a neurologist for traumatic brain injury." />
+  <Rod  isChecked="False"  width="138%" bodypart="leftKnee-p" isnewline="1" readonly="false" name="I recommend that the patient consult with an orthopedic surgeon for the left knee." />
+  <Rod  isChecked="False"  width="138%" bodypart="RightKnee-p" isnewline="1" readonly="false" name="I recommend that the patient consult with an orthopedic surgeon for the right knee." />
+  <Rod  isChecked="False"  width="138%" bodypart="leftshoulder-p" isnewline="1" readonly="false" name="I recommend that the patient consult with an orthopedic surgeon for the left shoulder. " />
+  <Rod  isChecked="False"  width="138%" bodypart="rightshoulder-p" isnewline="1" readonly="false" name="I recommend that the patient consult with an orthopedic surgeon for the right shoulder. " />
+  <Rod  isChecked="False"  width="138%" bodypart="leftankle-p" isnewline="1" readonly="false" name="I recommend the patient consult with an ankle specialist for the left ankle." />
+  <Rod  isChecked="False"  width="138%" bodypart="rightankle-p" isnewline="1" readonly="false" name="I recommend the patient consult with an ankle specialist for the right ankle." />
+  <Rod  isChecked="False"  width="138%" bodypart="leftwrist-p" isnewline="1" readonly="false" name="I recommend that the patient consult with a wrist/ hand specialist for the left wrist/hand." />
+  <Rod  isChecked="False"  width="138%" bodypart="Rightwrist-p" isnewline="1" readonly="false" name="I recommend that the patient consult with a wrist/ hand specialist for the right wrist/hand." />
+  <Rod  isChecked="False"  width="138%" bodypart="miscellaneous-p" isnewline="1" readonly="false" name=" " />
+
+</Rods>

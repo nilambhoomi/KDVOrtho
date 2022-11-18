@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TreatMents>
+  <TreatMent  isChecked="False" name="The patient is status post arthroscopy of the _____ shoulder / knee on __________ and comes today for postoperative followup." />
+  <TreatMent  isChecked="False" name="The surgical site has healed beautifully." />
+  <TreatMent  isChecked="False" name="The dressing was removed." />
+  <TreatMent  isChecked="False" name="There is no evidence of any drainage, redness, or discharge from the surgical site." />
+  <TreatMent  isChecked="False" name="There is no swelling." />
+  <TreatMent  isChecked="False" name="The patient is afebrile." />
+  <TreatMent  isChecked="False" name="The patient is very happy with the results of surgery." />
+  <TreatMent  isChecked="False" name="The patient has regained almost full mobility of the shoulder/knee." />
+  <TreatMent  isChecked="False" name="The patient has no / minimal pain." />
+  <TreatMent  isChecked="False" name="The patient has regained almost _____% of mobility." />
+  <TreatMent  isChecked="False" name="The patient is ambulating and full weight-bearing without any support." />
+  <TreatMent  isChecked="False" name="The patient was advised physical therapy __ times a week for ___ weeks to regain full mobility of the shoulder / knee." />
+  <TreatMent  isChecked="False" name="The patient was encouraged to call my office if there are any problems." />
+  <TreatMent  isChecked="False" name="Otherwise, the patient is discharged from my care." />
+  <TreatMent  isChecked="False" name="" />
+
+</TreatMents>

@@ -1,0 +1,35 @@
+﻿<h4 class="labelcolor">Review Of Systems:</h4>
+
+<div class="form-horizontal">
+    <label><b>Constitutional: </b></label>
+    <div class="span12">
+     <textarea id="txtRos" Style="width:700px;height:100px" onchange="txtAreaMe(this)">
+	 Constitutional: No fevers, chills, night sweats. Temperature taken at the time of exam was _____ degrees Fahrenheit. Eyes: No blurry vision, double vision, or vision changes. Skin: Clear, no rashes. Neurologic: No headaches or dizziness. Respiratory: No wheezing, coughing, shortness of breath or difficulty breathing. Cardiovascular: No chest pain, murmurs, irregular heart rate or hypertension. Gastrointestinal: No nausea, vomiting, diarrhea, jaundice, constipation or changes in bowel. Hematologic: No active bleeding, bruising, anemia or blood clotting disorders
+	</textarea>
+         </div>
+
+
+<script type="text/javascript">
+
+
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+
+</script>

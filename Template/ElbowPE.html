@@ -1,0 +1,153 @@
+﻿
+<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapRightPE" #rigthtdiv>
+        <label><b>Right Elbow:</b> </label>
+        <br />
+        <textarea id="txtFreeFormR" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#RPE
+</textarea>
+
+    </div>
+
+    <br />
+    <div id="WrapLeftPE" #leftdiv>
+        <label><b>Left Elbow:</b> </label>
+        <br />
+        <textarea id="txtFreeFormL" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#LPE
+</textarea>
+
+    </div>
+    <div id="TestPE">
+        <label></label>
+    </div>
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+<script type="text/javascript">
+
+    // window.load = PopulateDropDownList();
+
+    function PopulateDropDownList() {
+
+
+        //   var ddlRangeOfMotionRight = document.getElementById("ddlRangeOfMotionRight");
+
+        if (ddlRangeOfMotionRight.options.length === 0) {
+
+            var ddlRangeOfMotionLeft = document.getElementById("ddlRangeOfMotionLeft");
+            var ddlTinelRight = document.getElementById("ddlTinelRight");
+            var ddlTinelLeft = document.getElementById("ddlTinelLeft");
+
+            ddlRangeOfMotionLeft.options.length = 0;
+            ddlTinelLeft.options.length = 0;
+            ddlTinelRight.options.length = 0;
+            ddlRangeOfMotionRight.options.length = 0;
+
+
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+                //var $xml = $(xmlDoc);
+
+                // Find Person Tag
+                var Rom = $(res).find("ROM");
+
+
+                for (var i = 0; i < Rom.length; i++) {
+                    var optionL = document.createElement("option");
+                    var optionR = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionL.text = Rom[i].getAttribute('name');
+                    optionR.text = Rom[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddlRangeOfMotionLeft.options.add(optionL);
+                    ddlRangeOfMotionRight.options.add(optionR);
+                }
+
+                var Tinel = $(res).find("Result");
+
+
+                for (i = 0; i < Tinel.length; i++) {
+                    optionL = document.createElement("option");
+                    optionR = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionL.text = Tinel[i].getAttribute('name');
+                    optionR.text = Tinel[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddlTinelLeft.options.add(optionL);
+                    ddlTinelRight.options.add(optionR);
+                }
+            });
+        }
+    }
+
+    function selectTestCHK(chkid, val) {
+
+        if (val !== '')
+            $("#" + chkid).attr("checked", "checked");
+        else
+            $("#" + chkid).removeAttr("checked");
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+</script>

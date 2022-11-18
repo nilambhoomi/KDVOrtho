@@ -1,0 +1,359 @@
+﻿<div id="bodyui" style="margin-top: 15px">
+
+
+
+    <b class="labelcolor"> History:</b>
+
+
+
+    <p class="inline">
+        <label class="control-label" id="lbltile">This is an initial orthopedic evaluation for a #age-year-old #handeness dominant #gentlady, involved in a </label>
+        <!--<input id="chkh1" type="checkbox" value="who was the restrained #change1 of a vehicle that was involved in a  #change2 accident on #doa. " onclick="checkMe(this)" />
+        who was the restrained-->
+        <!--<section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh1_desc" value="driver" onchange="txtMe(this);selectVal('txt_chkh1_desc', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh1_desc', this.value)" id="ddl_chkh1_desc">
+                <option selected="selected">driver</option>
+                <option>passenger</option>
+
+            </select>
+        </section>-->
+
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh2_desc" value="#wctype" onchange="txtMe(this);" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh2_desc', this.value)" id="ddl_chkh2_desc">
+                <option selected="selected">motor vehicle</option>
+                <option>work related</option>
+
+            </select>
+        </section>
+        <label id="lbldoa"> accident on #doa. </label>
+    </p>
+
+    <b class="labelcolor"> Accident Description:</b>
+    <p class="inline">
+        <input type="text" id="txt_accident_desc_history" value="" style="width:700px" onchange="txtMe(this);" />
+    </p>
+    <br />
+    <p class="inline">
+        <input id="chkh11" type="checkbox" value="The patient was a #change11 and #change12 wearing a seatbelt. " onclick="checkMe(this)" />
+        The patient was a
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh11_desc" value="driver" onchange="txtMe(this);selectVal('txt_chkh11_desc', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh11_desc', this.value)" id="ddl_chkh1_desc">
+                <option selected="selected">driver </option>
+                <option>passenger </option>
+
+            </select>
+        </section>
+        and
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh12_desc" value="was" onchange="txtMe(this);" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh12_desc', this.value)" id="ddl_chkh12_desc">
+                <option selected="selected">was</option>
+                <option>was not</option>
+
+            </select>
+        </section> wearing a seatbelt.
+    </p>
+    <p class="inline">
+        <input id="chkvehiclestruck" type="checkbox" value="The vehicle was struck on the  #chkvehiclestruck side. " onclick="checkMe(this)" />
+        The vehicle was struck on the
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txtvehiclestruck" value="driver" onchange="txtMe(this);selectVal('txtvehiclestruck', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtvehiclestruck', this.value)" id="ddl_vehiclestruck">
+                <option selected="selected">driver</option>
+                <option>passenger</option>
+
+            </select>
+        </section>
+        side.
+    </p>
+    <p class="inline">
+        <input id="chkhairbag" type="checkbox" value="The airbags #changeairbag. " onclick="checkMe(this)" />
+        The airbags
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh_airbag" value="did deploy" onchange="txtMe(this);selectVal('txt_chkh_airbag', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh_airbag', this.value)" id="ddl_chkh_airbag">
+                <option selected="selected">did deploy</option>
+                <option>did not deploy</option>
+
+            </select>
+        </section>
+        .
+    </p>
+
+    <p class="inline">
+        <input id="chkems" type="checkbox" value="The EMS #changeems on the scene. " onclick="checkMe(this)" />
+        The EMS
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh_ems" value="arrived" onchange="txtMe(this);selectVal('txt_chkh_ems', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh_ems', this.value)" id="ddl_ems">
+                <option selected="selected">arrived</option>
+                <option>did not arrived</option>
+
+            </select>
+        </section>
+        on the scene.
+    </p>
+
+    <p class="inline">
+        <input id="chkhpolice" type="checkbox" value="The police #changepolice called to the scene of the accident. " onclick="checkMe(this)" />
+        The police
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh_police" value="were" onchange="txtMe(this);selectVal('txt_chkh_police', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh_police', this.value)" id="ddl_chkh_police">
+                <option selected="selected">were</option>
+                <option>were not</option>
+
+            </select>
+        </section>
+        called to the scene of the accident.
+    </p>
+
+    <p class="inline">
+        <input id="chkhtrans" type="checkbox" value="The patient went via #hosvia to #hospital hospital and was treated and released the same day. " onclick="checkMe(this)" checked />
+        The patient went via
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh_via" value="" onchange="txtMe(this);selectVal('txt_chkh_via', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh_via', this.value)" id="ddl_chkh_via">
+                <option></option>
+                <option>ambulance</option>
+
+
+            </select>
+        </section>
+        &nbsp;to&nbsp;
+        <input type="text" id="txt_chk_hospital" style="Width:200px" onchange="txtMe(this)" />
+        &nbsp;hospital and was treated and released the same day.
+    </p>
+
+    <p class="inline">
+        <input type="text" id="txt_released" value="" style="width:700px" onchange="txtMe(this);" />
+    </p>
+
+
+    <p class="inline">
+        <input id="chkhospital" type="checkbox" value="The patient did not go to the hospital thus far. " onclick="checkMe(this)" />
+        The patient did not go to the hospital thus far.&nbsp;&nbsp;
+
+
+        <label id="lblbodyparts" style="display:none">The patient presents today complaining of #bodyparts pain sustained in the #accidenttype accident. </label>
+
+    </p>
+
+
+    <p class="inline">
+        <input id="chkhphysical" type="checkbox" value="The patient has been treated with physical therapy for the last #weeks #good relief. " onclick="checkMe(this)" checked />
+        The patient has been treated with physical therapy for the last
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_weeks" value="week" onchange="txtMe(this);selectVal('txt_weeks', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_weeks', this.value)" id="ddl_weeks">
+                <option>week</option>
+                <option>months</option>
+
+
+            </select>
+        </section>
+    
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_good" value="with good" onchange="txtMe(this);selectVal('txt_good', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_good', this.value)" id="ddl_good">
+                <option></option>
+                <option>without adequate</option>
+                <option>with no</option>
+                <option>with good</option>
+
+            </select>
+        </section>
+        &nbsp;relief.
+    </p>
+
+    <p class="inline">
+        <input id="chkhdaytoday" type="checkbox" value="The patient states that the pain is interfering with day-to-day activities." onclick="checkMe(this)" />
+        The patient states that the pain is interfering with day-to-day activities.
+
+    </p>
+
+    <input type="button" onclick="callonsubmit()" value="demo" style="display:none" />
+
+    <!-- <p>
+
+         Overall pain score is  <input type="text" id="txtOverallPain" style="width:50px;text-align:right" onchange="txtMe(this);" /> / 10.
+
+     </p>-->
+</div>
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+<script type="text/javascript">
+
+    function callonsubmit() {
+
+        var strmain = '', str1 = '', str11 = '', str2 = '', str3 = '', str4 = '', str5 = '', str6 = '', str7 = '', str8 = '', str9 = '', str10 = '';
+
+
+        str1 = $('#lbltile').text();
+
+        var ch2 = $("#txt_chkh2_desc").val();
+        str1 = str1 + " " + ch2 + " " + $('#lbldoa').text();
+
+        var accident_desc = $("#txt_accident_desc_history").val();
+        var rel = $("#txt_released").val();
+
+        str1 = str1 + " " + accident_desc;
+
+        if ($('#chkh11').prop("checked") == true) {
+
+            str11 = $("#chkh11").val();
+            var ch11 = $("#txt_chkh11_desc").val();
+            var ch12 = $("#txt_chkh12_desc").val();
+            str11 = str11.replace('#change11', ch11);
+            str11 = str11.replace('#change12', ch12);
+        }
+
+        if ($('#chkvehiclestruck').prop("checked") == true) {
+            str10 = $("#chkvehiclestruck").val();
+            var ch1 = $("#txtvehiclestruck").val();
+            str10 = str10.replace('#chkvehiclestruck', ch1);
+        }
+
+
+        if ($('#chkhairbag').prop("checked") == true) {
+            str3 = $("#chkhairbag").val();
+            var ch1 = $("#txt_chkh_airbag").val();
+            str3 = str3.replace('#changeairbag', ch1);
+        }
+
+        if ($('#chkems').prop("checked") == true) {
+            str9 = $("#chkems").val();
+            var ch1 = $("#txt_chkh_ems").val();
+            str9 = str9.replace('#changeems', ch1);
+        }
+
+
+        if ($('#chkhpolice').prop("checked") == true) {
+            str4 = $("#chkhpolice").val();
+            var ch1 = $("#txt_chkh_police").val();
+            str4 = str4.replace('#changepolice', ch1);
+        }
+
+        if ($('#chkhtrans').prop("checked") == true) {
+
+            str5 = $("#chkhtrans").val();
+
+
+
+            var ch1 = $("#txt_chkh_via").val();
+            var ch2 = $("#txt_chk_hospital").val();
+            str5 = str5.replace('#hosvia', ch1);
+            str5 = str5.replace('#hospital', ch2);
+        }
+
+        if ($('#chkhospital').prop("checked") == true) {
+            str6 = $("#chkhospital").val();
+
+
+        }
+
+
+
+        str6 = str6 + $("#lblbodyparts").text();
+
+        if ($('#chkhphysical').prop("checked") == true) {
+
+            str7 = $("#chkhphysical").val();
+
+
+
+            var ch1 = $("#txt_weeks").val();
+            var ch2 = $("#txt_good").val();
+            str7 = str7.replace('#weeks', ch1);
+            str7 = str7.replace('#good', ch2);
+        }
+
+        if ($('#chkhdaytoday').prop("checked") == true) {
+            str8 = $("#chkhdaytoday").val();
+
+        }
+
+        strmain = str1 + str11 + str2 + str10 + str3 + str9 + str4 + str5 + rel + str6 + str7 + str8;
+
+
+
+
+        $('#ctl00_ContentPlaceHolder1_hdhistoryHTMLValue').val(strmain);
+
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val, changeCtrl = '', changeVal = '') {
+        $("#" + txtid).attr('value', val);
+        if (changeCtrl !== '') {
+            var str = $("#" + changeCtrl).val();
+            str = str.replace(changeVal, val);
+            alert(str);
+        }
+    }
+
+    function txtAreaMe(txt) {
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+
+
+
+</script>

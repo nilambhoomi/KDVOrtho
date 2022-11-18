@@ -1,0 +1,76 @@
+﻿<h4 class="labelcolor">Review Of Systems:</h4>
+
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="1" ID="chk_abdominal_pain" Value="stomach pain" onclick="checkMe(this)" />&nbsp;stomach pain
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="2" ID="chk_blurred" Value="bleeding disorder or significant family history of bleeding disorder" onclick="checkMe(this)" />&nbsp;bleeding disorder or significant family history of bleeding disorder
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="3" ID="chk_bowel_bladder" Value="urinary/bowel incontinence/urgency" onclick="checkMe(this)" />&nbsp;urinary/bowel incontinence/urgency
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="4" ID="chk_chest_pain" Value="chest pain" onclick="checkMe(this)" />&nbsp;chest pain
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="5" ID="chk_diarrhea" Value="diarrhea/constipation" onclick="checkMe(this)" />&nbsp;diarrhea/constipation
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="6" ID="chk_episodic_ligth" Value="active infection of any kind" onclick="checkMe(this)" />&nbsp;active infection of any kind
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="7" ID="chk_fever" Value="fever" onclick="checkMe(this)" />&nbsp;fever
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="8" ID="chk_hearing_loss" Value="chills" onclick="checkMe(this)" />&nbsp;chills
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="9" ID="chk_recent_wt" Value="weight loss" onclick="checkMe(this)" />&nbsp;weight loss
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="10" ID="chk_seizures" Value="seizure history" onclick="checkMe(this)" />&nbsp;seizure history
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="11" ID="chk_shortness_of_breath" Value="shortness of breath" onclick="checkMe(this)" />&nbsp;shortness of breath
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="12" ID="chk_sleep_disturbance" Value="nausea/vomiting" onclick="checkMe(this)" />&nbsp;nausea/vomiting
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="form-horizontal">
+    <div class="span3">
+        <input type='checkbox' TabIndex="13" ID="chk_jaw_pain" Value="dizziness" onclick="checkMe(this)" />&nbsp;dizziness
+    </div>
+    <div class="span3">
+        <input type='checkbox' TabIndex="14" ID="chk_bloodinurine" Value="skin rashes" onclick="checkMe(this)" />&nbsp;skin rashes
+    </div>
+    <div style="clear: both"></div>
+</div>
+
+<script type="text/javascript">
+
+
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+</script>

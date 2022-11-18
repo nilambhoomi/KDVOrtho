@@ -1,0 +1,351 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AddFollowUpMaster.master.cs" Inherits="AddFollowUpMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>PainTrax - Intakesheet</title>
+    <meta name="description" content="PainTrax">
+    <meta name="author" content="Unaht">
+    <!-- end: Meta dd -->
+
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+
+    <!-- start: CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-ui-1.8.24.js"></script>
+
+
+
+    <style>
+        <style >
+        .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+            color: #fff;
+            background-color: #5c5757;
+        }
+
+        .well {
+            background-color: #3de33ddb;
+            position: fixed;
+            width: 96.5%;
+            margin-top: -55px;
+        }
+
+
+        .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+            color: #fff;
+            background-color: #3de33ddb;
+        }
+
+
+        #ssesion {
+            padding: 0.5ex;
+            width: 600px;
+            background-color: #333;
+            color: #fff;
+            font-size: 2em;
+            border-radius: 0.5ex;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+            .inline label {
+                vertical-align: central;
+            }
+
+
+
+        checkbox + label {
+            /*Style for checkbox normal*/
+            width: 16px;
+            height: 16px;
+        }
+
+        .margintop tr {
+            display: flex;
+        }
+    </style>
+    <style type="text/css">
+        /*.Background {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }*/
+
+        /*.Popup {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 700px;
+            height: 550px;
+        }*/
+
+        .lbl {
+            font-size: 16px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .breadcrumb {
+            /* margin: -28px -28px 28px -28px; */
+            line-height: 24px;
+            background: #eee;
+            border: 0px;
+            color: #aaa;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+        }
+    </style>
+
+    <script>
+        function MenuHighlight() {
+            var current = location.pathname;
+            var curpage = current.substr(current.lastIndexOf('/') + 1);
+
+            $('#nav li a').each(function () {
+                var $this = $(this);
+                //alert(curpage);
+
+                // if the current path is like this link, make it active
+                if ($this.attr('href').indexOf(curpage) !== -1) {
+                    $(this).parent('li').addClass('active');
+                    //$this.addClass('active');
+                }
+
+            })
+        }
+
+        function onlyNumbers(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46 && charCode != 45)
+                return false;
+
+
+            return true;
+
+
+        }
+    </script>
+
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" autocomplete="off" runat="server">
+        <cc1:ToolkitScriptManager ID="toolkitScriptManager1" ScriptMode="Release" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="js/jquery-1.6.4.min.js" />
+                <asp:ScriptReference Path="js/jquery.ui.core.js" />
+                <asp:ScriptReference Path="js/jquery.ui.widget.js" />
+                <asp:ScriptReference Path="js/jquery.ui.button.js" />
+                <asp:ScriptReference Path="js/jquery.ui.position.js" />
+                <asp:ScriptReference Path="js/jquery.ui.autocomplete.js" />
+                <asp:ScriptReference Path="js/jquery.ui.combobox.js" />
+            </Scripts>
+        </cc1:ToolkitScriptManager>
+        <asp:UpdatePanel runat="server" ID="upMain">
+            <ContentTemplate>
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <a class="brand" href="PatientIntakeList.aspx"><span>ePainTrax</span></a>
+                            <ul id="nav" class="nav navbar-nav">
+                                <li class="">
+                                    <%--<i class="icon-home"></i>--%>
+                                    <a id="addfu" onclick="Confirmbox(event,'addfu')" runat="server" href="AddFU.aspx">Re Evaluation</a>
+                                </li>
+                                <li id="lipage2">
+                                    <%-- <%--<i class="icon-edit"></i>--%>
+                                    <a id="AddFUPage1" onclick="Confirmbox(event,'AddFUPage1')" runat="server" href="AddFUPage1.aspx">Page1</a>
+                                </li>
+                                <li id="li1" runat="server" enable="false">
+                                    <%-- <i class="icon-edit"></i>--%>
+                                    <a onclick="Confirmbox(event,'AddFUNeurologicalExam')" runat="server" id="AddFUNeurologicalExam" href="AddFUNeurologicalExam.aspx">Neurological Exam</a>
+                                </li>
+
+                                <%--  <li runat="server" id="Li3" enable="false">
+                                    <a id="lbtnProcedureDetails" onclick="Confirmbox(event,'lbtnProcedureDetails')" runat="server">Procedure Details</a>
+                                </li>--%>
+                                <li>
+                                    <a id="FuPoc" onclick="Confirmbox(event,'FuPoc')" runat="server" href="FuPoc.aspx">PoC</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_neck" enable="false">
+                                    <%--<%--<i class="icon-edit"></i>--%>
+                                    <a id="Neck_a" runat="server" onclick="Confirmbox(event,'Neck_a')">Neck</a>
+                                </li>
+
+                                <li runat="server" id="lnkbtn_Midback" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Midback_a" onclick="Confirmbox(event,'Midback_a')" runat="server">Midback</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_lowback" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Lowback_a" onclick="Confirmbox(event,'Lowback_a')" runat="server">Lowback</a>
+                                </li>
+                                <li id="lnkbtn_Shoulder" runat="server" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Shoulder_a" onclick="Confirmbox(event,'Shoulder_a')" runat="server">Shoulder</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_Keen" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="knee_a" onclick="Confirmbox(event,'knee_a')" runat="server">Knee</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_Elbow" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Elbow_a" onclick="Confirmbox(event,'Elbow_a')" runat="server">Elbow</a>
+                                </li>
+                                <li runat="server" enable="false" id="lnkbtn_Wrist">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Wrist_a" onclick="Confirmbox(event,'Wrist_a')" runat="server">Wrist</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_Hip" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Hip_a" onclick="Confirmbox(event,'Hip_a')" runat="server">Hip</a>
+                                </li>
+                                <li runat="server" id="lnkbtn_ankle" enable="false">
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="Ankle_a" onclick="Confirmbox(event,'Ankle_a')" runat="server">Ankle</a>
+                                </li>
+                                <li>
+                                    <a id="FuOthersParts" onclick="Confirmbox(event,'FuOthersParts')" runat="server" href="FuOthersParts.aspx">Other parts</a>
+                                </li>
+                                <li>
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="AddFuComments" onclick="Confirmbox(event,'AddFuComments')" runat="server" href="AddFuComments.aspx">Comments</a>
+                                </li>
+                                <li>
+                                    <a onclick="Confirmbox(event,'document')" id="patientdocumentfu" runat="server" href="PatientDocumentFU.aspx">Document</a>
+                                </li>
+                                 <li>
+                                    <%--<i class="icon-edit"></i>--%>
+                                    <a id="pocSummeryfu" runat="server"  href="POCSummeryFU.aspx">PoC Summary</a>
+                                </li>
+                            </ul>
+                            <div class="nav-no-collapse header-nav">
+                                <div class="nav pull-right">
+                                    <div><a class="brand" href="Logout.aspx"><span>Logout</span></a></div>
+                                </div>
+                                <%--   <div class="nav"><a class="brand" onclick="saveall()"><span>Save</span></a></div>--%>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <%-- <nav class="navbar navbar-inverse navbar-fixed-top">
+                                <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="PatientIntakeList.aspx"><span>ePainTrax - Patient Intakesheet</span></a>
+    </div>
+                          
+                                <%--<div class="nav-no-collapse header-nav">
+                        <div class="nav pull-right">
+                            <div><a class="brand" href="Logout.aspx"><span>Logout</span></a></div>
+                        </div>
+                    </div>--%>
+                                    </div>
+                                </nav>--%>
+                         <%--   <asp:Panel ID="pnldynamic" runat="server"
+                                HorizontalAlign="Left" Direction="LeftToRight">
+                                <asp:Button ID="lnkbtn_neck" OnClientClick="test('Neck'); return false;" runat="server" Visible="false" AlternateText="Neck" Text="Neck" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Midback" runat="server" OnClientClick="test('Midback'); return false;" Visible="false" AlternateText="Mid-back" Text="Midback" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_lowback" runat="server" OnClientClick="test('Lowback'); return false;" Visible="false" AlternateText="low-back" Text="lowback" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Shoulder" runat="server" OnClientClick="test('Shoulder'); return false;" Visible="false" AlternateText="Shoulder" Text="Shoulder" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Keen" runat="server" OnClientClick="test('Knee'); return false;" Visible="false" AlternateText="Knee" Text="Knee" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Elbow" runat="server" OnClientClick="test('Elbow'); return false;" Visible="false" AlternateText="Elbow" Text="Elbow" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Wrist" runat="server" OnClientClick="test('Wrist'); return false;" Visible="false" AlternateText="Wrist" Text="Wrist" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_Hip" runat="server" OnClientClick="test('Hip'); return false;" Visible="false" AlternateText="Hip" Text="Hip" CssClass="btn-small btn-primary" />
+                                <asp:Button ID="lnkbtn_ankle" runat="server" OnClientClick="test('Ankle'); return false;" Visible="false" AlternateText="Ankle" Text="Ankle" CssClass="btn-small btn-primary" />
+                            </asp:Panel>
+
+                            <iframe id="neckui" style="display: none; min-width: 1300px; height: auto; min-height: 2300px; overflow: auto;"></iframe>--%>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+        <div class="container-fluid" style="margin-top: 90px">
+            <div class="row-fluid">
+                <div id="content" class="span12">
+                    <div id="ssesion" runat="server" class="well well-small" style="position: fixed; width: 96.5%; margin-top: -55px;">
+                        <p>
+                            <b>Patient Name :</b>
+                            <asp:Label runat="server" ID="NameLbl"></asp:Label>
+                            &nbsp; &nbsp; &nbsp;  <b>Location :</b>
+                            <asp:Label runat="server" ID="locLbl"></asp:Label>
+                            &nbsp; &nbsp; &nbsp;<b>CaseType :</b>
+                            <asp:Label runat="server" ID="CTLbl"></asp:Label>&nbsp; &nbsp; &nbsp; <b>DOV :</b>
+                            <asp:Label runat="server" ID="DVLbl"></asp:Label>
+                        </p>
+                    </div>
+                    <div class="">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-- </div>
+                    </div>
+                </div>--%>
+        <%--</div>--%>
+    </form>
+    <script>
+        $(function () {
+            var current = location.pathname;
+            var curpage = current.substr(current.lastIndexOf('/') + 1);
+            $('#nav li a').each(function () {
+                var $this = $(this);
+                //alert(curpage);
+                //alert($this.attr('href'));
+                // if the current path is like this link, make it active
+                if ($this.attr('href').indexOf(curpage) !== -1) {
+                    $(this).parent('li').addClass('active');
+                    //$this.addClass('active');
+                }
+
+            })
+
+
+        });
+        var parameter = Sys.WebForms.PageRequestManager.getInstance();
+        parameter.add_endRequest(function () {
+            var current = location.pathname;
+            var curpage = current.substr(current.lastIndexOf('/') + 1);
+            $('#nav li a').each(function () {
+                var $this = $(this);
+                //alert(curpage);
+                //alert($this.attr('href'));
+                // if the current path is like this link, make it active
+                if ($this.attr('href').indexOf(curpage) !== -1) {
+                    $(this).parent('li').addClass('active');
+                    //$this.addClass('active');
+                }
+
+            })
+        });
+    </script>
+
+    <script>
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        prm.add_endRequest(function () {
+            MenuHighlight();
+        });
+    </script>
+</body>
+</html>
+

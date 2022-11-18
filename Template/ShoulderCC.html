@@ -1,0 +1,303 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+        <div id="WrapRight" #rigthtdiv>
+            <span><b>Right Shoulder:</b> </span>
+            <br />
+            <textarea id="txtFreeFormCCR" onchange="txtAreaMe(this)" Style="Width:700px;height:100px">
+#RCC
+
+</textarea>
+
+
+        </div>
+
+        <div id="WrapLeft" #leftdiv>
+            <span><b>Left Shoulder:</b> </span>
+            <br />
+            <textarea id="txtFreeFormCCL" onchange="txtAreaMe(this)" Style="Width:700px;height:100px">
+#LCC
+</textarea>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+
+    function removePainClass(txtId, side) {
+
+        var $span1 = $("#lblpain1" + side);
+        var $span2 = $("#lblpain2" + side);
+        var $span3 = $("#lblpain3" + side);
+
+
+
+        if ($(txtId).val() !== '') {
+
+
+
+            $span1.replaceWith(function () {
+                return $('<label/>', {
+                    Id: 'lblpain1' + side,
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<label/>', {
+
+                    Id: 'lblpain2' + side,
+                    html: this.innerHTML
+                });
+            });
+
+            $span3.replaceWith(function () {
+                return $('<label/>', {
+
+                    Id: 'lblpain3' + side,
+                    html: this.innerHTML
+                });
+            });
+
+
+
+        }
+        else {
+
+
+
+            $span1.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain1' + side,
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain2' + side,
+                    html: this.innerHTML
+                });
+            });
+            $span3.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain3' + side,
+                    html: this.innerHTML
+                });
+            });
+
+        }
+
+    }
+
+
+    function displaySide(side) {
+
+
+
+        if (side === 'l') {
+            $('#WrapLeft').show();
+            $('#WrapRight').hide();
+            $('#WrapLeftPE').show();
+            $('#WrapRightPE').hide();
+        }
+        else if (side === 'r') {
+            $('#WrapLeft').hide();
+            $('#WrapRight').show();
+            $('#WrapLeftPE').hide();
+            $('#WrapRightPE').show();
+        }
+        else {
+            $('#WrapLeft').show();
+            $('#WrapRight').show();
+            $('#WrapLeftPE').show();
+            $('#WrapRightPE').show();
+        }
+
+    }
+
+
+    function checkDefault(chk, deafCheck) {
+
+        debugger
+
+
+        var isCheck = false;
+        var className = "";
+        if ($("#" + deafCheck).prop("checked") == false) {
+
+            if ($(chk).prop("checked")) {
+                $("#" + deafCheck).attr('checked', 'checked');
+
+            }
+        }
+
+
+        if (deafCheck === "chkshlpainL")
+            className = "chkpainL";
+        if (deafCheck === "chkshlpainR")
+            className = "chkpainR";
+        else if (deafCheck === "chkleft1")
+            className = "chkimprovedL";
+        else if (deafCheck === "chkright1")
+            className = "chkimprovedR";
+        else if (deafCheck === "chkshlrevelRight")
+            className = "chkrevelR";
+        else if (deafCheck === "chkshlrevelLeft")
+            className = "chkrevelL";
+        else if (deafCheck === "chkPEright1")
+            className = "chkmuscleR";
+        else if (deafCheck === "chkPEleft1")
+            className = "chkmuscleL";
+
+
+
+
+
+        if ($("#" + deafCheck).prop("checked") == true) {
+
+
+
+
+            if ($(chk).prop("checked") == false) {
+
+                $("input:checkbox[class=" + className + "]").each(function () {
+                    if ($("#" + $(this).attr("id")).prop("checked") == true) {
+                        isCheck = true;
+                    }
+                });
+
+                if (!isCheck)
+                    $("#" + deafCheck).removeAttr('checked');
+
+            }
+        }
+    }
+
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function removeClass(chkid, side) {
+
+        var $span1 = $("#lblnature" + side);
+        var $span2 = $("#lblwhich" + side);
+
+        if ($(chkid).prop("checked") == true) {
+
+
+
+
+
+            $span1.replaceWith(function () {
+                return $('<label/>', {
+                    class: 'noprint',
+                    id: "lblnature" + side,
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<label/>', {
+                    class: 'noprint',
+                    id: "lblwhich" + side,
+                    html: this.innerHTML
+                });
+            });
+
+
+
+        }
+        else {
+
+
+            var className = 'pain' + side;
+            var isCheck = false;
+
+
+
+            $("input:checkbox[class=" + className + "]").each(function () {
+                if ($("#" + $(this).attr("id")).prop("checked") == true) {
+                    isCheck = true;
+                }
+            });
+
+            if (!isCheck) {
+
+
+                $span1.replaceWith(function () {
+                    return $('<span/>', {
+                        class: 'noprint',
+                        id: "lblnature" + side,
+                        html: this.innerHTML
+                    });
+                });
+
+
+                $span2.replaceWith(function () {
+                    return $('<span/>', {
+                        class: 'noprint',
+                        id: "lblwhich" + side,
+                        html: this.innerHTML
+                    });
+                });
+
+            }
+
+
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>
+
+

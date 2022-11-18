@@ -1,0 +1,117 @@
+﻿<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapRightPE" #rigthtdiv>
+        <label><b>Right Knee:</b> </label>
+        <br />
+        <textarea id="txtFreeFormR" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#RPE
+</textarea>
+
+    </div>
+
+    <br />
+    <div id="WrapLeftPE" #leftdiv>
+        <label><b>Left Knee:</b> </label>
+        <br />
+        <textarea id="txtFreeFormL" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#LPE
+</textarea>
+
+    </div>
+    <div id="TestPE">
+        <label></label>
+    </div>
+</div>
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function selectTestCHK(chkid, val) {
+
+        if (val !== '')
+            $("#" + chkid).attr("checked", "checked");
+        else
+            $("#" + chkid).removeAttr("checked");
+    }
+
+    function selectVal(txtid, val) {
+
+        $("#" + txtid).attr('value', val);
+    }
+
+    function setFirstLine(chk, lbl) {
+
+        debugger
+        if ($(chk).prop("checked")) {
+            $('#' + lbl).text('No heat or erythema noted.');
+
+        }
+        else {
+            $('#' + lbl).text('No heat, erythema, swelling noted.');
+        }
+
+    }
+
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+</script>

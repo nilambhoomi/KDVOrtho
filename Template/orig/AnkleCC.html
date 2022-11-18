@@ -1,0 +1,120 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+        <div id="WrapLeft" #leftdiv>
+            <label class="control-label">The patient complains of left ankle pain that is </label>
+            <input type="text" id="txtPainScaleL" style="Width:40px" value="8" onchange="txtMe(this)" />
+            <label class="control-label">/10 with 10 being the worst, which is </label>
+            <input type="checkbox" id="chkcontentL" value="content" onclick="checkMe(this)" />constant,
+            <input type="checkbox" id="chkintermittentL" value="intermittent" onclick="checkMe(this)" />intermittent,
+            <input type="checkbox" id="chksharpL" value="sharp" onclick="checkMe(this)" checked />sharp,
+            <input type="checkbox" id="chkdullL" value="dull" onclick="checkMe(this)" checked />dull,
+            <input type="checkbox" id="chkachyL" value="achy" onclick="checkMe(this)" checked />achy,
+            <input type="checkbox" id="chkcrampingL" value="cramping" onclick="checkMe(this)" />cramping,
+            <input type="checkbox" id="chkstabbingL" value="stabbing" onclick="checkMe(this)" />stabbing,
+            <input type="checkbox" id="chkthrobbingL" value="throbbing" onclick="checkMe(this)" />throbbing,
+            <input type="checkbox" id="chkpulsatingL" value="pulsating" onclick="checkMe(this)" />pulsating
+            <label> in nature.</label>
+            <label class="control-label">The patient complains of pain specifically at the </label>
+            <input type="checkbox" id="chkMedMalleolusL" value="medial malleolus" onclick="checkMe(this)" />medial malleolus,
+            <input type="checkbox" id="chkLatMalleolusL" value="lateral malleolus" onclick="checkMe(this)" />lateral malleolus,
+            <input type="checkbox" id="chkAchillesL" value="achilles tendon" onclick="checkMe(this)" />achilles tendon
+            <label>.</label>
+
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCL" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+                <button type="button" id="start_button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+            </section>
+
+
+        </div>
+        <div id="WrapRight" #rigthtdiv>
+            <label class="control-label">The patient complains of right ankle pain that is </label>
+            <input type="text" id="txtPainScaleR" style="Width:40px" value="8" onchange="txtMe(this)" />
+            <label class="control-label">/10 with 10 being the worst, which is </label>
+            <input type="checkbox" id="chkcontentR" value="content" onclick="checkMe(this)" />constant
+            <input type="checkbox" id="chkintermittentR" value="intermittent" onclick="checkMe(this)" />intermittent
+            <input type="checkbox" id="chksharpR" value="sharp" onclick="checkMe(this)" checked />sharp,
+            <input type="checkbox" id="chkdullR" value="dull" onclick="checkMe(this)" checked />dull,
+            <input type="checkbox" id="chkachyR" value="achy" onclick="checkMe(this)" checked />achy,
+            <input type="checkbox" id="chkcrampingR" value="cramping" onclick="checkMe(this)" />cramping,
+            <input type="checkbox" id="chkstabbingR" value="stabbing" onclick="checkMe(this)" />stabbing
+            <input type="checkbox" id="chkthrobbingR" value="throbbing" onclick="checkMe(this)" />throbbing,
+            <input type="checkbox" id="chkpulsatingR" value="pulsating" onclick="checkMe(this)" />pulsating
+            <label> in nature.</label>
+            <label class="control-label">The patient complains of pain specifically at the </label>
+            <input type="checkbox" id="chkMedMalleolusR" onclick="checkMe(this)" value="medial malleolus" />medial malleolus,
+            <input type="checkbox" id="chkLatMalleolusR" onclick="checkMe(this)" value="lateral malleolus" />lateral malleolus,
+            <input type="checkbox" id="chkAchillesR" onclick="checkMe(this)" value="achilles tendon" />achilles tendon
+            <label>.</label>
+
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCR" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+                <button type="button" id="start_button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+            </section>
+
+        </div>
+
+
+    </div>
+</div>
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>
+
+

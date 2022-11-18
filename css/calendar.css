@@ -1,0 +1,157 @@
+        #cal{
+            font-family:  Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+           
+        }
+        #_select_month,#_select_year{
+            padding: 2px;            
+            text-align: left;
+            font-family:  Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            margin: 10px;
+            
+        }
+      
+        #_cal_table
+        {
+            border: 1px solid gray ;
+            align-self:center;
+            box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-left: auto; 
+            margin-right: auto;
+            font-family:  Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            border-collapse:collapse;
+            color:rgb(79, 164, 238);
+            width:100%;
+            margin-top:0px;
+        }
+        #_cal_caption{
+            text-align: left;
+        }
+
+        ._cal_th{
+            width: 25px;
+            text-align: center;
+            border: 1px solid gray;
+            padding: 10px;
+            background-color: rgb(79, 164, 238);
+            color: aliceblue;
+        }
+
+        ._cal_head {
+            background-color: whitesmoke;
+            color:rgb(79, 164, 238);
+            font-size: 28px;
+            font-weight: 400;
+            padding: 10px;
+        }
+
+        /* tr{
+            padding: 50px;
+            margin: 20px;
+        } */
+        #_cal_table td{
+            border: 1px solid gray;            
+            height: 50px;
+            width: 100px;
+            padding: 0px 20px;
+            text-align: right;
+        }
+        #_cal_table td:hover{
+            background-color: rgb(177, 243, 177);            
+        }
+        ._cal_prevMonth,._cal_nextMonth{
+            background-color: rgba(88, 88, 88, 0.137);
+            color: rgba(49, 49, 49, 0.575);
+        }
+        ._cal_curDate{
+                       background-color: rgba(192, 46, 46, 0.24);
+         
+        }
+        .noOfEvent{
+            padding: 5px 10px;
+            margin-right: 10px;
+            background-color:rgba(41, 2, 2, 0.603);
+            color: whitesmoke;
+            border-radius: 25%;
+            width:35px;
+            text-align:center;
+        }
+
+    .dayLabel {         
+         width: 35px;
+         text-align:center
+    }
+
+
+#app {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#_app_table {
+    border: 1px solid gray;
+    align-self: center;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-collapse: collapse;
+    color: rgb(79, 164, 238);
+    width: 100%;
+    margin-top: 0px;
+}
+#_app_caption{
+    text-align:left;
+    margin-bottom:20px;
+}
+._app_td_time {
+    text-align: right;
+    background-color: rgb(79, 164, 238);
+    color: white;
+    width: 15%;
+    padding: 5px 10px;
+    border: 1px solid gray;
+}
+._app_td_data {
+    padding: 5px;
+    border: 1px solid gray;
+    border-right: none;
+}
+._app_td_btn {
+    text-align: center;
+    width: 15%;
+    border: 1px solid gray;
+    border-left:none;
+}
+
+._app_th {
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(79, 164, 238);
+    color: white;
+    padding: 10px;
+}
+
+.appLabel {
+    background-color: rgb(79, 164, 238);
+    color: white;
+    padding: 2px 15px;
+    margin-left:10px;
+    border-radius:5px;
+}
+
+.appBtn {
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 5px;
+    height:30px;
+    box-sizing:border-box;
+}

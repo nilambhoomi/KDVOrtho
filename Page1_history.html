@@ -1,0 +1,146 @@
+﻿<div id="bodyui" style="margin-top: 15px">
+
+
+
+    <b class="labelcolor"> History:</b>
+
+
+    <label class="control-label" id="lbltile">The patient is a #age -year-old #gender, </label>
+    <input id="chkh1" type="checkbox" value="who was the restrained #change1 of a vehicle that was involved in a  #change2 accident on #doa. " onclick="checkMe(this)" />
+    <p class="inline">
+        who was the restrained
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh1_desc" value="driver" onchange="txtMe(this);selectVal('txt_chkh1_desc', this.value)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh1_desc', this.value)" id="ddl_chkh1_desc">
+                <option selected="selected">driver</option>
+                <option>passenger</option>
+
+            </select>
+        </section>
+
+        of a vehicle that was involved in a
+
+
+        <section class="dropdown" style="width:200px">
+            <input type="text" id="txt_chkh2_desc" value="motor vehicle" onchange="txtMe(this);" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txt_chkh2_desc', this.value)" id="ddl_chkh2_desc">
+                <option selected="selected">motor vehicle</option>
+                <option>work related</option>
+
+            </select>
+        </section> accident on #doa.
+    </p>
+    <input id="chkh2" type="checkbox" value="who was involved in a work related accident on #doa." onclick="checkMe(this)" />
+    <p class="inline">
+        who was involved in a work related accident on #doa.
+    </p>
+    <input id="chkh3" type="checkbox" value="#sex was taken on an emergent basis to #hospital Hospital where #lsex was treated and released." onclick="checkMe(this)" checked />
+    <p class="inline">
+        #sex was taken on an emergent basis to
+        <input type="text" id="txt_chk_hospital" style="Width:200px" onchange="txtMe(this)" />
+        &nbsp;Hospital where #lsex was treated and released.
+    </p>
+    <p>
+        The patient has been undergoing PT/chiro for the past <input type="text" value="__ weeks/months" style="width:150px" onchange="txtMe(this);" id="txtWeek" />.
+    </p>
+
+
+</div>
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+<script type="text/javascript">
+
+    function callonsubmit() {
+
+        var strmain = '', str1 = '', str2 = '', str3 = '';
+
+        if ($('#chkh1').prop("checked") == true) {
+            str1 = $("#chkh1").val();
+            var ch1 = $("#txt_chkh1_desc").val();
+            var ch2 = $("#txt_chkh2_desc").val();
+            str1 = str1.replace('#change1', ch1);
+            str1 = str1.replace('#change2', ch2);
+
+        }
+
+        if ($('#chkh2').prop("checked") == true) {
+            str2 = $("#chkh2").val();
+
+        }
+
+        if ($('#chkh3').prop("checked") == true) {
+            str3 = $("#chkh3").val();
+            var ch1 = $("#txt_chk_hospital").val();
+            str3 = str3.replace('#hospital', ch1);
+        }
+
+        strmain = ($('#lbltile').text()) + str1 + str2 + '#sustained' + str3;
+
+        alert(strmain);
+
+        $('#ctl00_ContentPlaceHolder1_hdhistoryHTMLValue').val(strmain);
+
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val, changeCtrl = '', changeVal = '') {
+        $("#" + txtid).attr('value', val);
+        if (changeCtrl !== '') {
+            var str = $("#" + changeCtrl).val();
+            str = str.replace(changeVal, val);
+            alert(str);
+        }
+    }
+
+    function txtAreaMe(txt) {
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+
+
+
+</script>

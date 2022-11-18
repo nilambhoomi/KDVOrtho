@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+                <div id="WrapRight" #rigthtdiv>
+            <label class="control-label">The patient complains of pain and swelling in the right knee. </label>
+
+            <input id="chkcontentR" type="checkbox" value="There has been no improvement with physical therapy." onclick="checkMe(this)" /> There has been no improvement with physical therapy.
+            <input id="chkintermittentR" type="checkbox" value="The patient states that the right knee pain has improved with physical therapy." onclick="checkMe(this)" /> The patient states that the right knee pain has improved with physical therapy.
+            <input id="chksharpR" type="checkbox" value="#gender complains of pain with intermittent stiffness and buckling." onclick="checkMe(this)" checked /> #gender complains of pain with intermittent stiffness and buckling.
+          
+           
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCR" onchange="txtAreaMe(this)" Style="Width:700px;height:100px"></textarea>
+                <button type="button" id="Button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <section style="display: none"><span class="final" id="Span1"></span><span class="interim" id="Span2"></span></section>
+            </section>
+
+        </div>
+
+        <div id="WrapLeft" #leftdiv>
+            <label class="control-label">The patient complains of pain and swelling in the left knee. </label>
+            <input id="chkcontentL" type="checkbox" value="There has been no improvement with physical therapy." onclick="checkMe(this)" /> There has been no improvement with physical therapy.
+            <input id="chkintermittentL" type="checkbox" value="The patient states that the left knee pain has improved with physical therapy." onclick="checkMe(this)" /> The patient states that the left knee pain has improved with physical therapy.
+            <input id="chksharpL" type="checkbox" value="#gender complains of pain with intermittent stiffness and buckling." onclick="checkMe(this)" checked /> #gender complains of pain with intermittent stiffness and buckling.
+
+
+        
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCL" onchange="txtAreaMe(this)" Style="Width:700px;height:100px"></textarea>
+                <button type="button" id="start_button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <section style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></section>
+            </section>
+
+
+        </div>
+
+    </div>
+</div>
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>
+
+

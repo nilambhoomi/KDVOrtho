@@ -1,0 +1,580 @@
+﻿
+
+
+<div>
+<style>
+.td{
+float: right; padding-right: 5px;
+}
+</style>
+    <br />
+    <strong class="labelcolor">Neurological Exam:</strong>
+    <p>
+        The patient is alert and cooperative and responding appropriately. Cranial nerves II-XII are grossly intact except
+        <input type='text' ID="txtIntactExcept" TabIndex="32" onchange="txtMe(this)" />
+    </p>
+    <p>
+        <b>Deep Tendon Reflexes:</b>
+        <table>
+            <tr>
+                <td>
+                    <table style="margin-right: 50px">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' ID="UExchk" TabIndex="34" value="Upper Extremity" checked onclick="checkMe(this)" /> Upper Extremity
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Left</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="float: right; padding-right: 5px;">Triceps</td>
+                                <td>
+                                    <input type='text' ID="LTricepstxt" TabIndex="35" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RTricepstxt" TabIndex="36" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td style="float: right; padding-right: 5px;">Biceps</td>
+                                <td>
+                                    <input type='text' ID="LBicepstxt" TabIndex="37" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RBicepstxt" TabIndex="38" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="float: right; padding-right: 5px;">Brachioradialis</td>
+                                <td>
+                                    <input type='text' ID="LBrachioradialis" TabIndex="39" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' Width="50" TabIndex="38" ID="RBrachioradialis" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td></td>
+                <td>
+                    <table style="margin-top: -40px">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' ID="LEdtr" TabIndex="20" value="Lower Extremity" checked onclick="checkMe(this)" /> Lower Extremity
+                                </td>
+                                <td>&nbsp;&nbsp;Left</td>
+                                <td>&nbsp;&nbsp;Right</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="float: right; padding-right: 5px;">Knee</td>
+                                <td >
+                                    <input type='text' ID="LKnee" TabIndex="41" Width="50" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RKnee" TabIndex="42" Width="50" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td style="float: right; padding-right: 5px;">Ankle</td>
+                                <td>
+                                    <input type='text' ID="LAnkle" TabIndex="43" Width="50" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RAnkle" TabIndex="44" Width="50" onchange="txtMe(this)" value="2" style="Width:50px" />
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <br />
+    <b class="labelcolor">Sensory:</b>  Is checked by
+    <input type='checkbox' ID="chkPinPrick" TabIndex="47" value="pinprick" onclick="checkMe(this)" />
+    pinprick
+    <input type='checkbox' Text="" ID="chkLighttouch" value="light touch" checked="checked" onclick="checkMe(this)" />
+    light touch. It is
+    <input type='text' TabIndex="48" ID="txtSensory" onchange="txtMe(this)" value="intact" style="Width:750px" />
+    <button type="button" id="start_button" onclick="startButton(event)">
+        <img height="25px" width="25px" src="images/mic.png" alt="start" />
+    </button>
+    <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+    <table>
+        <tr>
+            <td>
+                <table style="margin-right: 50px; margin-top: 5px;">
+                    <thead>
+                        <tr>
+                            <td>
+                                <input type='checkbox' ID="UESen_Click" TabIndex="59" value="Upper Extremity" checked onclick="checkMe(this)" />Upper Extremity
+                            </td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Left</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Lateral arm</td>
+                            <td>
+                                <input type='text' ID="LLateralarm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="60" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RLateralarm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="61" style="Width:100px" />
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Lateral forearm, thumb, index</td>
+                            <td>
+                                <input type='text' ID="LLateralforearm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="62" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RLateralforearm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="63" style="Width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Middle finger</td>
+                            <td>
+                                <input type='text' ID="LMiddlefinger" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="64" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RMiddlefinger" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="65" style="Width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Medial forearm, ring, little finger</td>
+                            <td>
+                                <input type='text' ID="LMidialForearm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="66" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RMidialForearm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="67" style="Width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Medial arm</td>
+                            <td>
+                                <input type='text' ID="LMidialarm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="68" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RMidialarm" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="69" style="Width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Cervical paraspinals</td>
+                            <td>
+                                <input type='text' ID="LCervical" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="70" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RCervical" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="71" style="Width:100px" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+            <td></td>
+            <td>
+                <table style="margin-top: -20px">
+                    <thead>
+                        <tr>
+                            <td>
+                                <input type='checkbox' ID="LESen_Click" TabIndex="49" value="Lower Extremity" checked onclick="checkMe(this)" /> Lower Extremity
+                            </td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Left</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Distal medial thigh</td>
+                            <td>
+                                <input type='text' ID="LtxtDMTL3" TabIndex="50" onkeyup="RefreshValue(this);" onchange="txtMe(this)" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RtxtDMTL3" TabIndex="51" onkeyup="RefreshValue(this);" onchange="txtMe(this)" style="Width:100px" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Medial left foot</td>
+                            <td>
+                                <input type='text' ID="LtxtMLFL4" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="52" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RtxtMLFL4" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="53" style="Width:100px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Dorsum of the foot</td>
+                            <td>
+                                <input type='text' onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="53" ID="LtxtDOFL5" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RtxtDOFL5" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="54" style="Width:100px" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Lateral foot</td>
+                            <td>
+                                <input type='text' onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="55" ID="LtxtLTS1" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RtxtLTS1" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="56" style="Width:100px" />
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="float: right; padding-right: 5px;">Lumbar paraspinals</td>
+                            <td>
+                                <input type='text' onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="57" ID="LtxtLP" style="Width:100px" />
+                            </td>
+                            <td>
+                                <input type='text' ID="RtxtLP" onkeyup="RefreshValue(this);" onchange="txtMe(this)" TabIndex="58" style="Width:100px" />
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p style="display:inline">
+        <label Style="float: left;"><b>Hoffman's Exam:</b> </label>
+      </p>
+
+
+        <section class="dropdown">
+            <input type="text" id="txtHoffmanexam" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtHoffmanexam', this.value)" id="cboHoffmanexam">
+                <option value=""></option>
+                <option value="Positive">Positive</option>
+                <option value="Negative">Negative</option>
+            </select>
+        </section>
+
+
+
+    <p>
+        </ br>
+        <b class="labelcolor">Manual Muscle Strength Testing: </b> default value is 5/5 strength
+        <table>
+            <tr>
+                <td>
+                    <table style="margin-right: 50px;">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' ID="UEmmst" TabIndex="90" Text="Upper Extremity" checked onclick="checkMe(this)" /> Upper Extremity
+                                </td>
+                                <td></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Left</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;Right</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Shoulder</td>
+                                <td style="float: right; padding-right: 5px;">Abduction</td>
+                                <td>
+                                    <input type='text' ID="LAbduction" TabIndex="91" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RAbduction" TabIndex="92" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Flexion</td>
+                                <td>
+                                    <input type='text' ID="LFlexion" TabIndex="93" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RFlexion" TabIndex="94" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td>Elbow</td>
+                                <td style="float: right; padding-right: 5px;">Extension</td>
+                                <td>
+                                    <input type='text' ID="LElbowExtension" TabIndex="95" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RElbowExtension" TabIndex="96" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Flexion</td>
+                                <td>
+                                    <input type='text' ID="LElbowFlexion" TabIndex="97" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RElbowFlexion" TabIndex="98" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <!--<tr>
+                                <td></td>
+                                <td>Supination</td>
+                                <td>
+                                    <input type='text' ID="LSupination" TabIndex="99" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RSupination" TabIndex="100" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>-->
+                            <!--<tr>
+                                <td></td>
+                                <td>Pronation</td>
+                                <td>
+                                    <input type='text' ID="LPronation" TabIndex="101" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RPronation" TabIndex="102" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>-->
+                            <tr>
+                                <td>Wrist</td>
+                                <td style="float: right; padding-right: 5px;">Flexion</td>
+                                <td>
+                                    <input type='text' ID="LWristFlexion" TabIndex="103" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RWristFlexion" TabIndex="104" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Extension</td>
+                                <td>
+                                    <input type='text' ID="LWristExtension" TabIndex="105" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RWristExtension" TabIndex="106" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hand</td>
+                                <td style="float: right; padding-right: 5px;">Grip strength</td>
+                                <td>
+                                    <input type='text' ID="LGrip" TabIndex="107" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RGrip" TabIndex="108" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <!--<tr>
+                                <td>Hand</td>
+                                <td>Finger abduction</td>
+                                <td>
+                                    <input type='text' ID="LFinger" TabIndex="109" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RFinger" TabIndex="110" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>-->
+
+                        </tbody>
+                    </table>
+
+                </td>
+                <td></td>
+                <td>
+                    <table style="margin-top: 0px">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' ID="LEmmst" TabIndex="75" value="Lower Extremity" checked onclick="checkMe(this)" /> Lower Extremity
+                                </td>
+                                <td></td>
+                                <td>Left</td>
+                                <td>Right</td>
+                            </tr>
+                        </thead>
+                        <tbody style="padding: 5px">
+                            <tr>
+                                <td>Hip</td>
+                                <td style="float: right; padding-right: 5px;">Flexion</td>
+                                <td>
+                                    <input type='text' ID="LHipFlexion" TabIndex="76" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RHipFlexion" TabIndex="77" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Abduction</td>
+                                <td>
+                                    <input type='text' ID="LHipAbduction" TabIndex="78" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RHipAbduction" TabIndex="79" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Knee</td>
+                                <td style="float: right; padding-right: 5px;">Extension</td>
+                                <td>
+                                    <input type='text' ID="LKneeExtension" TabIndex="80" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RKneeExtension" TabIndex="81" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Flexion</td>
+                                <td>
+                                    <input type='text' ID="LKneeFlexion" TabIndex="82" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RKneeFlexion" TabIndex="83" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ankle</td>
+                                <td style="float: right; padding-right: 5px;">Dorsiflexion</td>
+                                <td>
+                                    <input type='text' TabIndex="84" ID="LDorsiflexion" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RDorsiflexion" TabIndex="85" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Plantar flexion</td>
+                                <td>
+                                    <input type='text' TabIndex="86" ID="LPlantar" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RPlantar" TabIndex="87" onchange="txtMe(this)" style="Width:50px" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="float: right; padding-right: 5px;">Extensor hallucis longus</td>
+                                <td>
+                                    <input type='text' TabIndex="88" onchange="txtMe(this)" ID="LExtensor" style="Width:50px" />
+                                </td>
+                                <td>
+                                    <input type='text' ID="RExtensor" onchange="txtMe(this)" TabIndex="89" style="Width:50px" />
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </p>
+</div>
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+        height: 30px;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+<script>
+   
+
+    function RefreshValue(txt) {
+
+
+        $.get('/xml/HSMData.xml', function (res) {
+
+            //var $xml = $(xmlDoc);
+            debugger;
+            // Find Person Tag
+            var NeurologicalExams = $(res).find("NeurologicalExams");
+
+            var NeurologicalExam = NeurologicalExams.find("NeurologicalExam");
+
+            var valtxt = '';
+
+            for (i = 0; i < NeurologicalExam.length; i++) {
+
+                if (NeurologicalExam[i].getAttribute('ikey') === txt.value) {
+                    valtxt = NeurologicalExam[i].getAttribute('name');
+                    break;
+                }
+
+            }
+
+            if (valtxt !== '')
+                txt.value = valtxt;
+
+        });
+
+        MenuHighlight();
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+</script>

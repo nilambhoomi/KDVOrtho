@@ -1,0 +1,138 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+        <div id="WrapLeft" #leftdiv>
+            <label class="control-label">The patient complains of left shoulder pain that is </label>
+            <input type="text" id="txtPainScaleL" style="Width:40px" value="8" onchange="txtMe(this)" />
+            <label class="control-label">/10 with 10 being the worst, which is  </label>
+            <input type="checkbox" id="chkcontentL" onclick="checkMe(this)" value="content" />constant
+            <input type="checkbox" id="chkintermittentL" onclick="checkMe(this)" value="intermittent" />intermittent
+            <input type="checkbox" id="chksharpL" onclick="checkMe(this)" value="sharp" checked />sharp
+            <input type="checkbox" id="chkdullL" onclick="checkMe(this)" value="dull" checked />dull
+            <input type="checkbox" id="chkachyL" onclick="checkMe(this)" value="achy in nature" checked />achy
+            <input type="checkbox" id="chkelectricL" onclick="checkMe(this)" value="electric" />electric
+            <input type="checkbox" id="chkshootingL" onclick="checkMe(this)" value="shooting" />shooting
+            <input type="checkbox" id="chkthrobbingL" onclick="checkMe(this)" value="throbbing" />throbbing
+            <input type="checkbox" id="chkpulsatingL" onclick="checkMe(this)" value="pulsating" />pulsating
+            <label> in nature.</label>
+
+            <label class="control-label">The shoulder pain worsens with </label>
+            <input type="checkbox" id="chkWorseLyingL" onclick="checkMe(this)" value="lying" />lying,
+            <input type="checkbox" id="chkWorseMovementL" onclick="checkMe(this)" value="raising the arm" checked />raising the arm,
+            <input type="checkbox" id="chkWorseLiftingL" onclick="checkMe(this)" value="lifting objects" checked />lifting objects,
+            <input type="checkbox" id="chkWorseRotationL" onclick="checkMe(this)" value="rotation" />rotation,
+            <input type="checkbox" id="chkWorseWorkingL" onclick="checkMe(this)" value="working" />working,
+            <input type="checkbox" id="chkWorseActivitiesL" onclick="checkMe(this)" value="overhead activities" checked />overhead activities
+            <label>.</label>
+            <label>The shoulder pain is improved with </label>
+            <input type="checkbox" id="chkImprovedRestingL" onclick="checkMe(this)" value="resting" checked />resting,
+            <input type="checkbox" id="chkImprovedMedicationL" onclick="checkMe(this)" value="medication" />medication,
+            <input type="checkbox" id="chkImprovedTherapyL" onclick="checkMe(this)" value="therapy" />therapy,
+            <input type="checkbox" id="chkImprovedSleepingL" onclick="checkMe(this)" value="sleeping" />sleeping
+            <label>.</label>
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCL" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+                <button type="button" id="start_button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+            </section>
+
+        </div>
+        <div id="WrapRight" #rigthtdiv>
+            <label class="control-label">The patient complains of right shoulder pain that is </label>
+            <input type="text" id="txtPainScaleR" style="Width:40px" value="8" onchange="txtMe(this)" />
+            <label class="control-label">/10 with 10 being the worst, which is  </label>
+            <input type="checkbox" id="chkcontentR" onclick="checkMe(this)" value="content" />constant
+            <input type="checkbox" id="chkintermittentR" onclick="checkMe(this)" value="intermittent" />intermittent
+            <input type="checkbox" id="chksharpL" onclick="checkMe(this)" value="sharp" checked />sharp
+            <input type="checkbox" id="chkdullL" onclick="checkMe(this)" value="dull" checked />dull
+            <input type="checkbox" id="chkachyL" onclick="checkMe(this)" value="achy in nature" checked />achy
+            <input type="checkbox" id="chkelectricL" onclick="checkMe(this)" value="electric" />electric
+            <input type="checkbox" id="chkshootingL" onclick="checkMe(this)" value="shooting" />shooting
+            <input type="checkbox" id="chkthrobbingL" onclick="checkMe(this)" value="throbbing" />throbbing
+            <input type="checkbox" id="chkpulsatingL" onclick="checkMe(this)" value="pulsating" />pulsating
+            <label> in nature.</label>
+
+            <label class="control-label">The shoulder pain worsens with </label>
+
+            <input type="checkbox" id="chkWorseLyingR" onclick="checkMe(this)" value="lying" />lying,
+            <input type="checkbox" id="chkWorseMovementR" onclick="checkMe(this)" value="raising the arm" checked />raising the arm,
+            <input type="checkbox" id="chkWorseLiftingR" onclick="checkMe(this)" value="lifting objects" checked />lifting objects,
+            <input type="checkbox" id="chkWorseRotationR" onclick="checkMe(this)" value="rotation" />rotation,
+            <input type="checkbox" id="chkWorseWorkingR" onclick="checkMe(this)" value="working" />working,
+            <input type="checkbox" id="chkWorseActivitiesR" onclick="checkMe(this)" value="overhead activities" checked />overhead activities
+            <label>. The shoulder pain is improved with </label>
+            <input type="checkbox" id="chkImprovedRestingR" onclick="checkMe(this)" value="resting" checked />resting,
+            <input type="checkbox" id="chkImprovedMedicationR" onclick="checkMe(this)" value="medication" />medication,
+            <input type="checkbox" id="chkImprovedTherapyR" onclick="checkMe(this)" value="therapy" />therapy,
+            <input type="checkbox" id="chkImprovedSleepingR" onclick="checkMe(this)" value="sleeping" />sleeping
+            <label>.</label>
+
+            <section class="col-md-3">
+                <span class="control-label">Notes</span>
+            </section>
+            <section class="col-md-9" style="margin-top: 5px">
+                <textarea id="txtFreeFormCCR" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+                <button type="button" id="start_button1" onclick="startButton1(event)">
+                    <img src="images/mic.gif" alt="start" />
+                </button>
+                <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>
+
+

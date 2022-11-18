@@ -1,0 +1,183 @@
+﻿
+<div class="col-md-9 row" style="margin-top: 5px">
+    <br />
+    <div id="WrapLeft" #leftdiv>
+
+        <label class="control-label"><b>Left Elbow Examination:</b> there is tenderness upon palpation of the elbow. Range of motion is </label>
+        <section class="dropdown">
+            <input type="text" id="txtRangeOfMotionLeft" onchange="txtMe(this)" value="mildly decreased. " />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtRangeOfMotionLeft', this.value)" id="ddlRangeOfMotionLeft"><option></option><option>mildly decreased. </option><option>moderately decreased. </option><option>severely decreased. </option></select>
+        </section>
+        <label class="control-label">Tinel is </label>
+        <section class="dropdown">
+            <input type="text" id="txtTinelLeft" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtTinelLeft', this.value)" id="ddlTinelLeft"></select>
+        </section>
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormL" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+    </div>
+    <br />
+    <div id="WrapRight" #rigthtdiv>
+        <label class="control-label"><b>Right Elbow Examination:</b> there is tenderness upon palpation of the elbow. Range of motion is </label>
+
+        <section class="dropdown">
+            <input type="text" id="txtRangeOfMotionRight" onchange="txtMe(this)" value="mildly decreased. " />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtRangeOfMotionRight', this.value)" id="ddlRangeOfMotionRight"><option></option><option>mildly decreased. </option><option>moderately decreased. </option><option>severely decreased. </option></select>
+        </section>
+
+        <label class="control-label">Tinel is </label>
+
+        <section class="dropdown">
+            <input type="text" id="txtTinelRight" onchange="txtMe(this)" />
+            <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtTinelRight', this.value)" id="ddlTinelRight"></select>
+        </section>
+        <br />
+
+        <section class="col-md-3">
+            <span class="control-label">Notes</span>
+        </section>
+        <section class="col-md-9" style="margin-top: 5px">
+            <textarea id="txtFreeFormR" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+
+            <button type="button" id="start_button" onclick="startButton(event)">
+                <img src="images/mic.gif" alt="start" />
+            </button>
+            <div style="display: none"><span class="final" id="final_span"></span><span class="interim" id="interim_span"></span></div>
+        </section>
+
+    </div>
+    <br />
+
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+<script type="text/javascript">
+
+   // window.load = PopulateDropDownList();
+
+    function PopulateDropDownList() {
+
+
+     //   var ddlRangeOfMotionRight = document.getElementById("ddlRangeOfMotionRight");
+
+        if (ddlRangeOfMotionRight.options.length === 0) {
+
+            var ddlRangeOfMotionLeft = document.getElementById("ddlRangeOfMotionLeft");
+            var ddlTinelRight = document.getElementById("ddlTinelRight");
+            var ddlTinelLeft = document.getElementById("ddlTinelLeft");
+
+            ddlRangeOfMotionLeft.options.length = 0;
+            ddlTinelLeft.options.length = 0;
+            ddlTinelRight.options.length = 0;
+            ddlRangeOfMotionRight.options.length = 0;
+
+
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+                //var $xml = $(xmlDoc);
+
+                // Find Person Tag
+                var Rom = $(res).find("ROM");
+
+
+                for (var i = 0; i < Rom.length; i++) {
+                    var optionL = document.createElement("option");
+                    var optionR = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionL.text = Rom[i].getAttribute('name');
+                    optionR.text = Rom[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddlRangeOfMotionLeft.options.add(optionL);
+                    ddlRangeOfMotionRight.options.add(optionR);
+                }
+
+                var Tinel = $(res).find("Result");
+
+
+                for (i = 0; i < Tinel.length; i++) {
+                    optionL = document.createElement("option");
+                    optionR = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionL.text = Tinel[i].getAttribute('name');
+                    optionR.text = Tinel[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddlTinelLeft.options.add(optionL);
+                    ddlTinelRight.options.add(optionR);
+                }
+            });
+        }
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+</script>

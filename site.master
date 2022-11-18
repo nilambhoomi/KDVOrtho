@@ -1,0 +1,558 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>PainTrax - Intakesheet</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta name="description" content="Bootstrap Metro Dashboard">
+    <meta name="author" content="Dennis Ji">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <!-- end: Meta -->
+
+    <!-- start: Mobile Specific -->
+
+    <!-- end: Mobile Specific -->
+
+
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script src="Scripts/jquery-1.8.2.js"></script>
+    <script src="js/images/bootstrap.min.js"></script>
+    <!-- start: CSS -->
+    <%-- <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>--%>
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+    <%--<link rel="stylesheet" href="../assets/css/jquery-ui.custom.css" />--%>
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.css" class="ace-main-stylesheet" />
+
+    <!-- ace settings handler -->
+    <script src="../assets/js/ace-extra.js"></script>
+
+    <%--    <script type="text/javascript" src="http://cdn.rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.min.js"></script>
+
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>--%>
+    <%-- <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+    </script>--%>
+    <%--    <script src="../assets/js/bootstrap.js"></script>--%>
+
+    <!-- page specific plugin scripts -->
+
+    <!-- ace scripts -->
+    <%-- <script src="../assets/js/ace/elements.scroller.js"></script>
+    <script src="../assets/js/ace/elements.colorpicker.js"></script>
+    <script src="../assets/js/ace/elements.fileinput.js"></script>
+    <script src="../assets/js/ace/elements.typeahead.js"></script>
+    <script src="../assets/js/ace/elements.wysiwyg.js"></script>
+    <script src="../assets/js/ace/elements.spinner.js"></script>
+    <script src="../assets/js/ace/elements.treeview.js"></script>
+    <script src="../assets/js/ace/elements.wizard.js"></script>
+    <script src="../assets/js/ace/elements.aside.js"></script>
+    <script src="../assets/js/ace/ace.js"></script>
+    <script src="../assets/js/ace/ace.ajax-content.js"></script>
+    <script src="../assets/js/ace/ace.touch-drag.js"></script>
+    <script src="../assets/js/ace/ace.sidebar.js"></script>
+    <script src="../assets/js/ace/ace.sidebar-scroll-1.js"></script>
+    <script src="../assets/js/ace/ace.submenu-hover.js"></script>
+    <script src="../assets/js/ace/ace.widget-box.js"></script>
+    <script src="../assets/js/ace/ace.settings.js"></script>
+    <script src="../assets/js/ace/ace.settings-rtl.js"></script>
+    <script src="../assets/js/ace/ace.settings-skin.js"></script>
+    <script src="../assets/js/ace/ace.widget-on-reload.js"></script>
+    <script src="../assets/js/ace/ace.searchbox-autocomplete.js"></script>--%>
+    <style>
+        .dropdown-menu .no-skin .nav-list .open > a, .no-skin .nav-list .open > a:hover, .no-skin .nav-list .open > a:focus {
+            background-color: #4f99c6 !important;
+        }
+    </style>
+
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        $(function () {
+            //debugger;
+            var current = location.pathname;
+            var curpage = current.substr(current.lastIndexOf('/') + 1);
+            $('#nav li a').each(function () {
+                //debugger;
+                var $this = $(this);
+                // if the current path is like this link, make it active
+                if ($this.attr('href').indexOf(curpage) !== -1) {
+                    $this.parent().addClass('active open');
+                }
+            })
+        })
+        jQuery(function ($) {
+            var $sidebar = $('.sidebar').eq(0);
+            if (!$sidebar.hasClass('h-sidebar')) return;
+
+            $(document).on('settings.ace.top_menu', function (ev, event_name, fixed) {
+                if (event_name !== 'sidebar_fixed') return;
+
+                var sidebar = $sidebar.get(0);
+                var $window = $(window);
+
+                //return if sidebar is not fixed or in mobile view mode
+                //  var sidebar_vars = $sidebar.ace_sidebar('vars');
+                //if (!fixed || (sidebar_vars['mobile_view'] || sidebar_vars['collapsible'])) {
+                //    $sidebar.removeClass('lower-highlight');
+                //    //restore original, default marginTop
+                //    sidebar.style.marginTop = '';
+
+                //    $window.off('scroll.ace.top_menu')
+                //    return;
+                //}
+
+
+                var done = false;
+                $window.on('scroll.ace.top_menu', function (e) {
+
+                    var scroll = $window.scrollTop();
+                    scroll = parseInt(scroll / 4);//move the menu up 1px for every 4px of document scrolling
+                    if (scroll > 17) scroll = 17;
+
+
+                    if (scroll > 16) {
+                        if (!done) {
+                            $sidebar.addClass('lower-highlight');
+                            done = true;
+                        }
+                    }
+                    else {
+                        if (done) {
+                            $sidebar.removeClass('lower-highlight');
+                            done = false;
+                        }
+                    }
+
+                    sidebar.style['marginTop'] = (17 - scroll) + 'px';
+                }).triggerHandler('scroll.ace.top_menu');
+
+            }).triggerHandler('settings.ace.top_menu', ['sidebar_fixed', $sidebar.hasClass('sidebar-fixed')]);
+
+            $(window).on('resize.ace.top_menu', function () {
+                $(document).triggerHandler('settings.ace.top_menu', ['sidebar_fixed', $sidebar.hasClass('sidebar-fixed')]);
+            });
+
+
+        });
+    </script>
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="no-skin">
+    <form id="form1" runat="server" autocomplete="off">
+
+        <%-- <asp:ScriptManager runat="server" ID="scpMGR"></asp:ScriptManager>--%>
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" ScriptMode="Release" runat="server">
+            <Scripts>
+                <%--<asp:ScriptReference Path="js/jquery-1.6.4.min.js" />--%>
+                <%-- <asp:ScriptReference Path="js/jquery.ui.core.js" />--%>
+                <%-- <asp:ScriptReference Path="js/jquery.ui.widget.js" />--%>
+                <asp:ScriptReference Path="js/jquery.ui.button.js" />
+                <asp:ScriptReference Path="js/jquery.ui.position.js" />
+                <%-- <asp:ScriptReference Path="js/jquery.ui.autocomplete.js" />--%>
+                <asp:ScriptReference Path="js/jquery.ui.combobox.js" />
+            </Scripts>
+        </cc1:ToolkitScriptManager>
+        <!-- start: Header -->
+
+        <div id="navbar" class="navbar navbar-default">
+            <script type="text/javascript">
+                try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+            </script>
+
+            <div class="navbar-container" id="navbar-container">
+                <!-- #section:basics/sidebar.mobile.toggle -->
+                <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                    <span class="sr-only">Toggle sidebar</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- /section:basics/sidebar.mobile.toggle -->
+                <div class="navbar-header pull-left">
+                    <!-- #section:basics/navbar.layout.brand -->
+                    <a href="PatientIntakeList.aspx" class="navbar-brand">
+                        <small>ePainTrax
+                        </small>
+                    </a>
+
+                    <!-- /section:basics/navbar.layout.brand -->
+
+                    <!-- #section:basics/navbar.toggle -->
+
+                    <!-- /section:basics/navbar.toggle -->
+                </div>
+                <!-- #section:basics/navbar.dropdown -->
+
+                <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                    <ul class="nav ace-nav">
+                        <!-- #section:basics/navbar.user_menu -->
+                        <li class="light-blue">
+                            <a href="Logout.aspx">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Logout
+                            </a>
+
+                        </li>
+                        <!-- /section:basics/navbar.user_menu -->
+                    </ul>
+                </div>
+                <!-- TeamViewer Logo (generated at http://www.teamviewer.com) -->
+                <div class="navbar-buttons navbar-header pull-right" role="navigation" style="position: relative; width: 100px; height: 45px;">
+                    <ul class="nav ace-nav">
+                        <a href="http://www.teamviewer.com/link/?url=505374&id=696286970" style="text-decoration: none; margin-left: -30px;">
+                            <img src="http://www.teamviewer.com/link/?url=979936&id=696286970" alt="TeamViewer for Remote Support" title="TeamViewer for Remote Support" border="0" width="120" height="45" />
+                            <span style="position: absolute; margin-left: -30px; top: 18.5px; left: 50px; display: block; cursor: pointer; color: White; font-family: Arial; font-size: 10px; line-height: 1.2em; font-weight: bold; text-align: center; width: 65px;">Remote Support
+                            </span>
+                        </a>
+                    </ul>
+                </div>
+                <!-- /section:basics/navbar.dropdown -->
+            </div>
+            <!-- /.navbar-container -->
+        </div>
+        <!-- start: Header -->
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
+            <div id="sidebar" class="sidebar      h-sidebar                navbar-collapse collapse">
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+                </script>
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+                            <i class="ace-icon fa fa-signal"></i>
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="ace-icon fa fa-pencil"></i>
+                        </button>
+
+                        <!-- #section:basics/sidebar.layout.shortcuts -->
+                        <button class="btn btn-warning">
+                            <i class="ace-icon fa fa-users"></i>
+                        </button>
+
+                        <button class="btn btn-danger">
+                            <i class="ace-icon fa fa-cogs"></i>
+                        </button>
+
+                        <!-- /section:basics/sidebar.layout.shortcuts -->
+                    </div>
+
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+
+                        <span class="btn btn-info"></span>
+
+                        <span class="btn btn-warning"></span>
+
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div>
+                <!-- /.sidebar-shortcuts -->
+
+                <ul id="nav" class="nav nav-list">
+                    <li class="hover">
+                        <a href="GetMAProviders.aspx">
+                            <i class="menu-icon fa fa-home"></i>
+                            <span class="menu-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="hover">
+                        <a href="PatientIntakeList.aspx">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-text">Patient List</span>
+                        </a>
+                    </li>
+                    <li class="hover">
+                        <asp:LinkButton ID="btnAddNew" OnClick="btnAddNew_Click" runat="server">
+                    <i class="menu-icon fa fa-plus-square"></i>
+							<span class="menu-text">Create Initial Evaluation </span>
+                        </asp:LinkButton>
+                    </li>
+                    <li class="hover">
+                        <a href="TimeSheet.aspx">
+                            <i class="menu-icon fa fa-pencil-square-o"></i>
+                            <span class="menu-text">Sign-in Sheet </span>
+                        </a>
+                    </li>
+                    <li class="hover">
+                        <a href="Templatestorepdf.aspx">
+                            <i class="menu-icon fa fa-file-pdf-o"></i>
+                            <span class="menu-text">Forms </span>
+                        </a>
+
+                    </li>
+                    <li class="hover">
+                        <a href="ViewPatientMaster.aspx">
+                            <i class="menu-icon fa fa-user-md"></i>
+                            <span class="menu-text">Patients</span>
+                        </a>
+
+                    </li>
+                    <%-- <li class="hover">
+                        <a href="ManageUser.aspx">
+                            <i class="menu-icon fa fa-user"></i>
+                            <span class="menu-text">Manage User</span>
+                        </a>
+
+                    </li>--%>
+                    <li class="hover">
+                        <a href="ManageUserLog.aspx">
+                            <i class="menu-icon fa fa-file-text-o"></i>
+                            <span class="menu-text">User Log</span>
+                        </a>
+
+                    </li>
+
+                    <%--                    <% if (Session["UserDesigId"].ToString() == "2")
+                        { %>--%>
+
+                    <li id="amaster" runat="server">
+
+                        <a data-toggle="dropdown" href="#">
+                            <i class="menu-icon fa fa-file-text-o"></i>
+                            <span class="menu-text">Master Entry</span>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <% if (Session["pageAccess"].ToString().Contains("1"))
+                                { %>
+                            <li>
+                                <a href="ManageUser.aspx">Manage User
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("2"))
+                                { %>
+                            <li>
+                                <a href="ViewAttorney.aspx">Attorneys
+                                </a>
+                            </li>
+                            <%} %>
+
+
+                            <% if (Session["pageAccess"].ToString().Contains("3"))
+                                { %>
+                            <li>
+                                <a href="ViewDiagCodes.aspx">Diag Codes
+                                </a>
+                            </li>
+                            <%} %>
+
+
+                            <% if (Session["pageAccess"].ToString().Contains("4"))
+                                { %>
+                            <li>
+                                <a href="ViewInsCo.aspx">Ins. Co
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("5"))
+                                { %>
+                            <li>
+                                <a href="ViewMedicine.aspx">Medication
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("6"))
+                                { %>
+                            <li>
+                                <a href="ViewLocations.aspx">Locations
+                                </a>
+                            </li>
+                            <%} %>
+                            <%-- <li>
+                                <a href="ViewPatientMaster.aspx">Patients
+                                </a>
+                            </li>--%>
+
+                            <% if (Session["pageAccess"].ToString().Contains("7"))
+                                { %>
+                            <li>
+                                <a href="ViewPharmacy.aspx">Pharmacies
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("8"))
+                                { %>
+                            <li>
+                                <a href="ViewProviders.aspx">Providers
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("9"))
+                                { %>
+                            <li>
+                                <a href="ProcedureList.aspx">Procedure
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("10"))
+                                { %>
+                            <li>
+                                <a href="ViewDesignation.aspx">Designation
+                                </a>
+                            </li>
+                            <%} %>
+                            <% if (Session["pageAccess"].ToString().Contains("11"))
+                                { %>
+                            <li>
+                                <a href="ViewGroups.aspx">Groups
+                                </a>
+                            </li>
+                            <%} %>
+
+                            <% if (Session["pageAccess"].ToString().Contains("12"))
+                                { %>
+                            <li>
+                                <a href="CreateFolder.aspx">Add Folder
+                                </a>
+                            </li>
+                            <%} %>
+                            <li>
+                                <a href="ViewDefaultCCPE.aspx">Default Value
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <%--       <%} %>--%>
+                    <li class="hover">
+                        <a href="DischargePatientList.aspx">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-text">Discharge Patient List</span>
+                        </a>
+                    </li>
+                    <li id="Li12" runat="server">
+
+                        <a data-toggle="dropdown" href="#">
+                            <i class="menu-icon fa fa-file-text-o"></i>
+                            <span class="menu-text">Reports</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="PoCReport.aspx">POC Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ProcedureReport.aspx">Pro / SX Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ProcedureSurgeryReport.aspx">Proc / Sx Detailed Report
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hover">
+                        <a href="GeneralDocument.aspx">
+                            <i class="menu-icon fa fa-file-text-o"></i>
+                            <span class="menu-text">Documents</span>
+                        </a>
+                    </li>
+                    <li id="Li1" runat="server">
+
+                        <a data-toggle="dropdown" href="#">
+                            <i class="menu-icon fa fa-plug"></i>
+                            <span class="menu-text">Utility</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="Utility.aspx">Upload Documents </a>
+                            </li>
+                            <li>
+                                <a href="Utility_New.aspx">Upload Documents New</a>
+                            </li>
+                            <%-- <li>
+                                <a href="Scheduler.aspx">Scheduler</a>
+                            </li>--%>
+                            <li>
+                                <a href="pdfMap.aspx">Pdf Map</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="hover">
+                        <a href="SchedulerNew.aspx">
+                            <i class="menu-icon fa fa-calendar"></i>
+                            <span class="menu-text">Scheduler</span>
+                        </a>
+                    </li>
+
+                    <%--  <li class="hover">
+                        <a href="Utility.aspx">
+                            <i class="menu-icon fa fa-plug"></i>
+                            <span class="menu-text">Utility</span>
+                        </a>
+                    </li>--%>
+                </ul>
+
+                <!-- /.page-header -->
+                <!-- /section:basics/sidebar.layout.minimize -->
+                <script type="text/javascript">
+                    try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+                </script>
+            </div>
+
+            <asp:ContentPlaceHolder runat="server" ID="cpTitle"></asp:ContentPlaceHolder>
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="cpMain" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+            <div class="footer">
+                <div class="footer-inner">
+                    <!-- #section:basics/footer -->
+                    <div class="footer-content">
+                        <span class="bigger-120">
+                            <span class="blue bolder">PainTrax</span>
+                            &copy; <%= DateTime.Now.Year.ToString() %>
+                        </span>
+
+
+                    </div>
+
+                    <!-- /section:basics/footer -->
+                </div>
+            </div>
+
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div>
+
+    </form>
+</body>
+</html>

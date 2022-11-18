@@ -1,0 +1,329 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+
+        <textarea id="txtFreeFormCC" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+    </div>
+</div>
+
+
+<script>
+
+
+
+    function removePainClass(txtId) {
+
+        var $span1 = $("#lblpain1");
+        var $span2 = $("#lblpain2");
+        var $span3 = $("#lblpain3");
+
+
+
+        if ($(txtId).val() !== '') {
+
+
+
+            $span1.replaceWith(function () {
+                return $('<label/>', {
+                    Id: 'lblpain1',
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<label/>', {
+
+                    Id: 'lblpain2',
+                    html: this.innerHTML
+                });
+            });
+
+            $span3.replaceWith(function () {
+                return $('<label/>', {
+
+                    Id: 'lblpain3',
+                    html: this.innerHTML
+                });
+            });
+
+
+            //$('#lblnature').removeClass("noprint");
+            //$('#lblwhich').removeClass("noprint");
+        }
+        else {
+
+
+
+            $span1.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain1',
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain2',
+                    html: this.innerHTML
+                });
+            });
+            $span3.replaceWith(function () {
+                return $('<span/>', {
+                    class: 'noprint',
+                    Id: 'lblpain3',
+                    html: this.innerHTML
+                });
+            });
+
+        }
+
+    }
+
+    window.load = disableTableDefault();
+
+    function disableTableDefault() {
+        if ($('#chkLowbackpain2').prop("checked")) {
+            $('#tblLB1').find("*").removeAttr("disabled");
+
+        }
+        else {
+            $('#tblLB1').find("*").attr("disabled", "disabled");
+
+        }
+
+        if ($('#chkLowbackpain4').prop("checked")) {
+            $('#tblLB2').find("*").removeAttr("disabled");
+        }
+        else
+            $('#tblLB2').find("*").attr("disabled", "disabled");
+    }
+
+    function removeClass(chkid) {
+        var $span1 = $("#lblnature");
+        var $span2 = $("#lblwhich");
+
+        if ($(chkid).prop("checked") == true) {
+
+
+            $span1.replaceWith(function () {
+                return $('<label/>', {
+                    class: 'noprint',
+                    id: 'lblnature',
+                    html: this.innerHTML
+                });
+            });
+
+
+            $span2.replaceWith(function () {
+                return $('<label/>', {
+                    class: 'noprint',
+                    id: 'lblwhich',
+                    html: this.innerHTML
+                });
+            });
+
+
+        }
+        else {
+
+
+            var className = 'painclass';
+            var isCheck = false;
+
+
+
+            $("input:checkbox[class=" + className + "]").each(function () {
+                if ($("#" + $(this).attr("id")).prop("checked") == true) {
+                    isCheck = true;
+                }
+            });
+
+            if (!isCheck) {
+
+
+                $span1.replaceWith(function () {
+                    return $('<span/>', {
+                        class: 'noprint',
+                        id: "lblnature",
+                        html: this.innerHTML
+                    });
+                });
+
+
+                $span2.replaceWith(function () {
+                    return $('<span/>', {
+                        class: 'noprint',
+                        id: "lblwhich",
+                        html: this.innerHTML
+                    });
+                });
+
+
+            }
+
+        }
+    }
+
+
+    function disableTable(txt, chkid) {
+        //var val = $(txt).val();
+
+
+
+        //if (val === '')
+        //    $('#' + chkid).find("*").removeAttr("disabled");
+        //else
+        //    $('#' + chkid).find("*").attr("disabled", "disabled");
+
+
+
+        if ($(txt).prop("checked") == true) {
+            $('#' + chkid).find("*").removeAttr("disabled");
+            var $span = $("#spanTo");
+            $span.replaceWith(function () {
+                return $('<label/>', {
+
+                    html: this.innerHTML
+                });
+            });
+
+
+        }
+        else {
+            $('#' + chkid).find("*").attr("disabled", "disabled");
+
+            if (chkid === 'tblLB1') {
+                referce1();
+                $('#txtFreeFormCC').attr('value', "");
+            }
+            if (chkid === 'tblLB2')
+                referce2();
+        }
+    }
+
+    function checkDefault(chk, deafCheck) {
+
+        debugger
+
+
+        var isCheck = false;
+        var className = "";
+        if ($("#" + deafCheck).prop("checked") == false) {
+
+            if ($(chk).prop("checked")) {
+                $("#" + deafCheck).attr('checked', 'checked');
+
+            }
+        }
+
+
+        if (deafCheck === "chklbackpainwors")
+            className = "chkpainL";
+        else if (deafCheck === "chkLowbackpain22")
+            className = "chkimproveL";
+        else if (deafCheck === "chkLowbackpain4")
+            className = "chkbackpain";
+
+
+
+
+        if ($("#" + deafCheck).prop("checked") == true) {
+
+
+
+
+            if ($(chk).prop("checked") == false) {
+
+                $("input:checkbox[class=" + className + "]").each(function () {
+                    if ($("#" + $(this).attr("id")).prop("checked") == true) {
+                        isCheck = true;
+                    }
+                });
+
+                if (!isCheck)
+                    $("#" + deafCheck).removeAttr('checked');
+
+            }
+        }
+    }
+
+    function referce1() {
+
+
+        $("input[name*='RSH']").removeAttr("checked");
+        $("input[name*='RSC']").removeAttr("checked");
+        $("input[name*='RAR']").removeAttr("checked");
+        $("input[name*='RFA']").removeAttr("checked");
+        $("input[name*='RHA']").removeAttr("checked");
+        $("input[name*='RWR']").removeAttr("checked");
+        $("input[name*='R1D']").removeAttr("checked");
+        $("input[name*='R2D']").removeAttr("checked");
+        $("input[name*='R3D']").removeAttr("checked");
+        $("input[name*='R4D']").removeAttr("checked");
+        //$("input[name*='R5D']").prop('checked', false);
+        //$("input[name='RSH']").prop('checked', false);
+    }
+
+    function referce2() {
+
+
+        $("input[name*='ASH']").removeAttr("checked");
+        $("input[name*='ASC']").removeAttr("checked");
+        $("input[name*='AAR']").removeAttr("checked");
+        $("input[name*='AFA']").removeAttr("checked");
+        $("input[name*='AHA']").removeAttr("checked");
+        $("input[name*='AWR']").removeAttr("checked");
+        $("input[name*='A1D']").removeAttr("checked");
+        $("input[name*='A2D']").removeAttr("checked");
+        $("input[name*='A3D']").removeAttr("checked");
+        $("input[name*='A4D']").removeAttr("checked");
+        //$("input[name*='A5D']").prop('checked', false);
+        //$("input[name='RSH']").prop('checked', false);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+</script>

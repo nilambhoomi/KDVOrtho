@@ -1,0 +1,42 @@
+﻿<div class="form-horizontal">
+    <strong class="labelcolor">Degree of Disability:</strong>
+
+    <input type='radio' name="disability" Value="partial" onchange="checkMe(this)" />Partial
+    <input type='radio' name="disability" Value="25%" onchange="checkMe(this)" />25%
+    <input type='radio' name="disability" Value="50%" onchange="checkMe(this)" />50%
+    <input type='radio' name="disability" Value="75%" onchange="checkMe(this)" />75%
+    <input type='radio' name="disability" Value="100%" onchange="checkMe(this)" />100%
+    <input type='radio' name="disability" Value="none" onchange="checkMe(this)" />None----
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <strong class="labelcolor">Restrictions:</strong>
+    <input type='checkbox' Value="Bending / Twisting" onclick="checkMe(this)" />bending
+    <input type='checkbox' Value="Climbing stairs/ladders" onclick="checkMe(this)" />Climbing stairs/ladders
+    <input type='checkbox' Value="Environmental conditions" onclick="checkMe(this)" />Environmental conditions
+    <input type='checkbox' Value="Kneeling" onclick="checkMe(this)" />Kneeling
+    <input type='checkbox' Value="Lifting" onclick="checkMe(this)" />Lifting
+    <input type='checkbox' Value="Operating heavy equipment" onclick="checkMe(this)" />Operating heavy equipment
+    <input type='checkbox' Value="Operation of motor vehicles" onclick="checkMe(this)" />Operation of motor vehicles
+    <input type='checkbox' Value="Personal protective equipment" onclick="checkMe(this)" />Personal protective equipment
+    <input type='checkbox' Value="Sitting" onclick="checkMe(this)" />Sitting
+    <input type='checkbox' Value="Standing" onclick="checkMe(this)" />Standing
+    <input type='checkbox' Value="Use of public transportation" onclick="checkMe(this)" />Use of public transportation
+    <input type='checkbox' Value="Use of upper extremities" onclick="checkMe(this)" />Use of upper extremities
+    <br />
+    <strong class="labelcolor">Others:</strong>
+    <input type='text' ID="txtOtherRestrictions" TabIndex="33" onchange="txtMe(this)" style="Width:782px" />
+    <br />
+    <strong class="labelcolor">Work Status:</strong>
+    <br />
+    <input type='checkbox' Value="Able to go back to work" onclick="checkMe(this)"/>
+    Able to go back to work <input type="text" id="txtbackwork" TabIndex="30" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' Value="Working" id="txtworking" onclick="checkMe(this)"/>Working <input type="text" id="" TabIndex="40" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' Value="Not Working" id="txtnotworking" onclick="checkMe(this)"/>Not Working <input type="text" id="" TabIndex="50" onchange="txtMe(this)" />
+    <br />
+    <input type='checkbox' Value="Partially Working" id="txtpartiallyworking" onclick="checkMe(this)"/>Partially Working <input type="text" id="" TabIndex="60" onchange="txtMe(this)" />
+</div>

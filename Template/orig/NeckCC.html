@@ -1,0 +1,570 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <span class="control-label"><b><u>CHIEF COMPLAINT</u></b></span>
+    </div>
+    <div class="col-md-9" style="margin-top: 5px">
+        <label>The patient complains of neck pain that is </label>:
+        <input id="txtPainScale" type="text" style="width:40px;text-align:right" value="8" onchange="txtMe(this)" />
+        <label>/10, with 10 being the worst; which is </label>
+        <input id="chkcontent" type="checkbox" value="content" onclick="checkMe(this)" />constant
+        <input id="chkintermittent" type="checkbox" value="intermittent" onclick="checkMe(this)" />intermittent.
+        <input id="chksharp" type="checkbox" value="sharp" onclick="checkMe(this)" checked />sharp
+        <input id="chkdull" type="checkbox" value="dull" onclick="checkMe(this)" checked />dull
+        <input id="chkachy" type="checkbox" value="achy" onclick="checkMe(this)" checked />achy
+        <input id="chkelectric" type="checkbox" value="electric" onclick="checkMe(this)" />electric
+        <input id="chkshooting" type="checkbox" value="shooting" onclick="checkMe(this)" />shooting
+        <input id="chkthrobbling" type="checkbox" value="throbbing" onclick="checkMe(this)" />throbbing
+
+        <input id="chkpulsating" type="checkbox" value="pulsating" onclick="checkMe(this)" />pulsating
+        <label> in nature. </label>
+
+        <br />
+        <input id="txtradiates" style="visibility:hidden" #txtradiates />
+        <input id="txtburningTo" style="visibility:hidden" #txtburningTo /><br />
+        <label class="control-label">The neck pain radiates to </label>:
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <img style="height:30px;width:30px" src="img/reset.png" onclick="referce1()" />
+                        <!--<asp:ImageButton id="btnReset"  Height="30px" Width="30px" ImageUrl="~/img/reset.png" OnClick="btnReset_Click" />-->
+                    </th>
+                    <th class="table_cell">
+                        <span>Shoulder </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Scapula </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Arm </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Forearm </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Hand </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Wrist</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>1st digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>2nd digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>3rd digit</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>4th digit</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>5th digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>fingers </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="">Left</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkshoulderleft1" name="RSH" value="left shoulder" onchange="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaLeft1" name="RSC" value="left scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmLeft1" name="RAR" value="left arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmLeft1" name="RFA" value="left forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandLeft1" name="RHA" value="left hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristLeft1" name="RWR" value="left wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitLeft1" name="R1D" value="left 1st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitLeft1" name="R2D" value="left 2st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitLeft1" name="R3D" value="left 3st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitLeft1" name="R4D" value="left 4st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitLeft1" name="R5D" value="left 5st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkFingersLeft1" name="RF" value="left fingers" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Right</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderRight1" name="RSH" value="right shoulder" onchange="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaRight1" name="RSC" value="right scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmRight1" name="RAR" value="right arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmRight1" name="RFA" value="right forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandRight1" name="RHA" value="right hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristRight1" name="RWR" value="right wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitRight1" name="R1D" value="right 1st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitRight1" name="R2D" value="right 2st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitRight1" name="R3D" value="right 3st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitRight1" name="R4D" value="right 4st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitRight1" name="R5D" value="right 5st digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkFingersRight1" name="RF" value="right fingers" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bilateral</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderBilateral1" name="RSH" value="bilateral shoulder" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaBilateral1" name="RSC" value="bilateral scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmBilateral1" name="RAR" value="bilateral arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmBilateral1" name="RFA" value="bilateral forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandBilateral1" name="RHA" value="bilateral hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristBilateral1" name="RWR" value="bilateral wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitBilateral1" name="R1D" value="bilateral 1th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitBilateral1" name="R2D" value="bilateral 2th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitBilateral1" name="R3D" value="bilateral 3th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitBilateral1" name="R4D" value="bilateral 4th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitBilateral1" name="R5D" value="bilateral 5th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkFingersBilateral1" name="RF" value="bilateral fingers" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderNone1" name="RSH" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaNone1" name="RSC" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmNone1" name="RAR" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmNone1" name="RFA" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandNone1" name="RHA" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristNone1" name="RWR" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitNone1" name="R1D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitNone1" name="R2D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitNone1" name="R3D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitNone1" name="R4D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitNone1" name="R5D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkFingersNone1" name="RF" value="" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <label style="display:none">.</label>
+        <label class="control-label">The neck pain is associated with </label>
+        <input type="checkbox" id="chknumbness" value="numbness" checked onclick="checkMe(this)" />numbness
+        <input type="checkbox" id="chktingling" value="tingling" checked onclick="checkMe(this)" />tingling
+        <input type="checkbox" id="chkburning" value="burning sensation" onclick="checkMe(this)" />burning sensation
+        <input type="checkbox" id="chkelectric1" value="electric" onclick="checkMe(this)" />electric
+        <input type="checkbox" id="chkpinsneedles" value="pins & needles" onclick="checkMe(this)" />pins & needles
+        <label> to </label>
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <img style="height:30px;width:30px" src="img/reset.png" onclick="referce2()" />
+                        <!--<asp:ImageButton id="btnReset1" Height="30px" Width="30px"  ImageUrl="~/img/reset.png" OnClick="btnReset1_Click" />-->
+                    </th>
+                    <th class="table_cell">
+                        <span>Shoulder </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Scapula </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Arm </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Forearm </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Hand </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>Wrist</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>1st digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>2nd digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>3rd digit</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>4th digit</span>
+                    </th>
+                    <th class="table_cell">
+                        <span>5th digit </span>
+                    </th>
+                    <th class="table_cell">
+                        <span>fingers </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Left</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderLeft2" name="ASH" value="left shoulder" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaLeft2" name="ASC" value="left scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmLeft2" name="AAR" value="left arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmLeft2" name="AFA" value="left forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandLeft2" name="AHA" value="left hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristLeft2" name="AWR" value="left wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitLeft2" name="A1D" value="left 1th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitLeft2" name="A2D" value="left 2th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitLeft2" name="A3D" value="left 3th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitLeft2" name="A4D" value="left 4th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitLeft2" name="A5D" value="left 5th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkfingersLeft2" name="AF" value="left finger" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Right</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderRight2" name="ASH" value="right shoulder" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaRight2" name="ASC" value="right scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmRight2" name="AAR" value="right arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmRight2" name="AFA" value="right forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandRight2" name="AHA" value="right hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristRight2" name="AWR" value="right wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitRight2" name="A1D" value="right 1th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitRight2" name="A2D" value="right 2th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitRight2" name="A3D" value="right 3th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitRight2" name="A4D" value="right 4th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitRight2" name="A5D" value="right 5th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkfingersRight2" name="AF" value="right fingers" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bilateral</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderBilateral2" name="ASH" value="bilateral shoulder" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaBilateral2" name="ASC" value="bilateral scapula" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmBilateral2" name="AAR" value="bilateral arm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmBilateral2" name="AFA" value="bilateral forearm" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandBilateral2" name="AHA" value="bilateral hand" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristBilateral2" name="AWR" value="bilateral wrist" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitBilateral2" name="A1D" value="bilateral 1th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitBilateral2" name="A2D" value="bilateral 2th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitBilateral2" name="A3D" value="bilateral 3th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitBilateral2" name="A4D" value="bilateral 4th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitBilateral2" name="A5D" value="bilateral 5th digit" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkfingersBilateral2" name="AF" value="bilateral fingers" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkShoulderNone2" name="ASH" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkScapulaNone2" name="ASC" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkArmNone2" name="AAR" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkForearmNone2" name="AFA" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkHandNone2" name="AHA" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkWristNone2" name="AWR" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk1stDigitNone2" name="A1D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk2ndDigitNone2" name="A2D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk3rdDigitNone2" name="A3D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk4thDigitNone2" name="A4D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chk5thDigitNone2" name="A5D" value="" onclick="checkMe(this)" />
+                    </td>
+                    <td class="table_cell">
+                        <input type="radio" id="chkfingersNone2" name="AF" value="" onclick="checkMe(this)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <label style="display:none">.</label>
+    </div>
+</div>
+
+
+<section class="row">
+    <section class="col-lg-12">
+        <section class="col-md-3">
+            <span class="control-label">Notes:</span>
+        </section>
+        <div class="col-md-9" style="margin-top: 5px">
+            <label id="lblneckpain">Neck pain increases with  </label>
+            <input type="checkbox" id="chkWorseLookingUp" value="looking up" onclick="checkMe(this)" checked />looking up,
+            <input type="checkbox" id="chkWorseLookingDown" value="looking down" onclick="checkMe(this)" checked />looking down,
+            <input type="checkbox" id="chkWorseHeadtoRight" value="turning head to right" onclick="checkMe(this)" checked />turning head to right, and
+            <input type="checkbox" id="chkWorseHeadtoLeft" value="turning head to left" onclick="checkMe(this)" checked />turning head to left.
+            <label style="display:none">.</label>
+            <label id="lblneckinterferes">Neck pain interferes with  </label>
+            <input type="checkbox" id="chkinterferesSleeping" value="sleeping" onclick="checkMe(this)" checked />sleeping
+            <input type="checkbox" id="chkWorseWorking" value="working" onclick="checkMe(this)" />working
+            <input type="checkbox" id="chkinterferesdriving" value="driving" onclick="checkMe(this)" />driving
+            <input type="checkbox" id="chkinterferesbending" value="bending" onclick="checkMe(this)" />bending
+            <input type="checkbox" id="chkinterferesHouseholdchores" value="household chores" onclick="checkMe(this)" />household chores
+            <input type="checkbox" id="chkdrivingShopping" value="shopping" onclick="checkMe(this)" />shopping
+            <input type="checkbox" id="chkdrivingCarryingheavyitems" value="carrying heavy items" onclick="checkMe(this)" />carrying heavy items.
+            <label style="display:none">.</label>
+            <!--&nbsp;and&nbsp;-->
+            <!--<input type="text" id="txtWorseOtherText" #txtWorseOtherText />-->
+            <label id="Label4"> Neck pain is improved with  </label>
+            <input type="checkbox" id="chkImprovedResting" value="resting" onclick="checkMe(this)" checked />resting
+            <input type="checkbox" id="chkImprovedMedication" value="medication" onclick="checkMe(this)" />medication
+            <input type="checkbox" id="chkImprovedTherapy" value="therapy" onclick="checkMe(this)" />therapy
+            <input type="checkbox" id="chkImprovedSleeping" value="sleeping" onclick="checkMe(this)" />sleeping.
+            <label style="display:none">.</label>
+        </div>
+    </section>
+</section>
+<section class="row">
+    <section class="col-md-3">
+        <span class="control-label">Notes</span>
+    </section>
+    <section class="col-md-9" style="margin-top: 5px">
+        <textarea id="txtFreeFormCC" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+        <button type="button" id="start_button1" onclick="startButton1(event)">
+            <img src="images/mic.gif" alt="start" />
+        </button>
+        <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+    </section>
+</section>
+
+
+<script>
+    function referce1() {
+
+
+        $("input[name*='RSH']").prop('checked', false);
+        $("input[name*='RSC']").prop('checked', false);
+        $("input[name*='RAR']").prop('checked', false);
+        $("input[name*='RFA']").prop('checked', false);
+        $("input[name*='RHA']").prop('checked', false);
+        $("input[name*='RWR']").prop('checked', false);
+        $("input[name*='R1D']").prop('checked', false);
+        $("input[name*='R2D']").prop('checked', false);
+        $("input[name*='R3D']").prop('checked', false);
+        $("input[name*='R4D']").prop('checked', false);
+        $("input[name*='R5D']").prop('checked', false);
+        $("input[name='RF']").prop('checked', false);
+    }
+
+    function referce2() {
+
+
+        $("input[name*='ASH']").prop('checked', false);
+        $("input[name*='ASC']").prop('checked', false);
+        $("input[name*='AAR']").prop('checked', false);
+        $("input[name*='AFA']").prop('checked', false);
+        $("input[name*='AHA']").prop('checked', false);
+        $("input[name*='AWR']").prop('checked', false);
+        $("input[name*='A1D']").prop('checked', false);
+        $("input[name*='A2D']").prop('checked', false);
+        $("input[name*='A3D']").prop('checked', false);
+        $("input[name*='A4D']").prop('checked', false);
+        $("input[name*='A5D']").prop('checked', false);
+        $("input[name='AF']").prop('checked', false);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton1(event) {
+        controlname = "#txtFreeFormCC";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>
+
+<!--<input type="button" onclick="return funSave()" value="Save" />-->

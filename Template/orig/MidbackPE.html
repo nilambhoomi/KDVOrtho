@@ -1,0 +1,263 @@
+﻿<div class="row col-md-9">
+
+    <span Style="float: left;"><b>Thoracic Spine Examination: </b></span> <label> reveals palpable spasms and tenderness to palpation in parathoracic musculature, bilateral trapezius and bilateral rhomboids </label>
+    <section class="dropdown">
+        <input type="text" id="txtWorse1" onchange="txtMe(this)" />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtWorse1', this.value)" id="ddlWorse1"><option></option><option>worse on the left</option><option>worse on the right</option></select>
+    </section>
+    <label>. </label>
+    <label>Pain with extension, flexion and lateral rotation to left and right. Positive facet loading maneuver </label>
+    <section class="dropdown">
+        <input type="text" id="txtWorse2" onchange="txtMe(this)" value="bilaterally equal " />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtWorse2', this.value)" id="ddlWorse2"><option></option><option>bilaterally equal </option><option>bilaterally, worse on the right </option><option>bilaterally, worse on the left </option><option>only on the left</option><option>only on the right </option></select>
+    </section>
+    <label> resulting in pain. Positive facet joint tenderness </label>
+    <section class="dropdown">
+        <input type="text" id="txtWorse3" onchange="txtMe(this)" value="bilaterally equal. " />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtWorse3', this.value)" id="ddlWorse3"><option></option><option>bilaterally equal. </option><option>bilaterally, worse on the right. </option><option>bilaterally, worse on the left. </option><option>only on the left. </option><option>only on the right. </option></select>
+    </section>
+    <label>.</label>
+    <br />
+
+
+    <label class="control-label">ROM is </label>
+    &nbsp;&nbsp;
+    <section class="dropdown">
+        <input type="text" id="txtROMs" onchange="txtMe(this)" value="mildly decreased. " />
+        <select onchange="this.previousElementSibling.value = this.value; this.previousElementSibling.focus();selectVal('txtROMs', this.value)" id="ddlROMs"><option></option><option>mildly decreased. </option><option>moderately decreased. </option><option>severely decreased. </option></select>
+    </section>
+
+
+</div>
+
+<div id="divTP">
+    <div class="row">
+        <div class="col-md-3">
+            <span class="control-label"><b><u>Trigger Point:</u></b></span>
+        </div>
+        <div class="col-md-9" style="margin-top: 5px">
+
+            <span>There are palpable taut bands/trigger points at </span>
+
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide1" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText1" onchange="txtMe(this)" Style="margin-left: 20px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide2" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText2" onchange="txtMe(this)" Style="margin-left: 20px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide3" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText3" onchange="txtMe(this)" Style="margin-left: 20px;Width:557px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select ID="ddlTPSide4" Style="height: 30px; width: 100px"></select>
+                    <input type="text" ID="txtTPText4" onchange="txtMe(this)" Style="margin-left: 20px;Width:557px" />
+                </td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="control-label"></label>
+            </div>
+            <div class="col-md-9" style="margin-top: 5px">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="row">
+    <section class="col-md-3">
+        <span class="control-label">Notes</span>
+    </section>
+    <section class="col-md-9" style="margin-top: 5px">
+        <textarea id="txtFreeForm" Style="width:700px;height:100px" onchange="txtAreaMe(this)"></textarea>
+        <button type="button" id="start_button2" onclick="startButton2(event)">
+            <img src="images/mic.gif" alt="start" />
+        </button>
+        <div style="display: none"><span class="final" id="final_span1"></span><span class="interim" id="interim_span1"></span></div>
+    </section>
+</section>
+
+
+
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+<script type="text/javascript">
+
+
+
+    window.load = PopulateDropDownList();
+
+    function PopulateDropDownList() {
+
+
+        var ddl1 = document.getElementById("ddlTPSide1");
+
+        if (ddl1.options.length === 0) {
+
+            var ddl2 = document.getElementById("ddlTPSide2");
+            var ddl3 = document.getElementById("ddlTPSide3");
+            var ddl4 = document.getElementById("ddlTPSide4");
+
+            ddl1.options.length = 0;
+            ddl2.options.length = 0;
+            ddl3.options.length = 0;
+            ddl4.options.length = 0;
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+                //var $xml = $(xmlDoc);
+
+                var TPSides = $(res).find("sTPSides");
+                var Rom = $(TPSides).find("TPSide");
+
+
+                for (var i = 0; i < Rom.length; i++) {
+                    var option1 = document.createElement("option");
+                    var option2 = document.createElement("option");
+                    var option3 = document.createElement("option");
+                    var option4 = document.createElement("option");
+
+
+
+                    //Set Customer Name in Text part.
+                    option1.text = Rom[i].getAttribute('name');
+                    option2.text = Rom[i].getAttribute('name');
+                    option3.text = Rom[i].getAttribute('name');
+                    option4.text = Rom[i].getAttribute('name');
+
+                    option1.value = Rom[i].getAttribute('name');
+                    option2.value = Rom[i].getAttribute('name');
+                    option3.value = Rom[i].getAttribute('name');
+                    option4.value = Rom[i].getAttribute('name');
+
+                    //Add the Option element to DropDownList.
+                    ddl1.options.add(option1);
+                    ddl2.options.add(option2);
+                    ddl3.options.add(option3);
+                    ddl4.options.add(option4);
+
+                }
+            });
+
+
+            var ddlLevels = document.getElementById("ddlLevels");
+            var ddlSpurlings = document.getElementById("ddlSpurlings");
+
+            ddlLevels.options.length = 0;
+            ddlSpurlings.options.length = 0;
+
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+                //var $xml = $(xmlDoc);
+
+                // Find Person Tag
+                var Radiate = $(res).find("ROM");
+
+
+                for (var i = 0; i < Radiate.length; i++) {
+                    var optionDistraction = document.createElement("option");
+                    var optionSpurlings = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionSpurlings.text = Radiate[i].getAttribute('name');
+                    optionDistraction.text = Radiate[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+
+                    ddlSpurlings.options.add(optionSpurlings);
+
+
+                }
+
+                var Levels = $(res).find("Level");
+
+
+                for (i = 0; i < Levels.length; i++) {
+                    var optionLevels = document.createElement("option");
+
+
+                    //Set Customer Name in Text part.
+                    optionLevels.text = Levels[i].getAttribute('name');
+
+
+
+                    //Add the Option element to DropDownList.
+                    ddlLevels.options.add(optionLevels);
+
+
+                }
+            });
+
+        }
+
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+        $("#" + txtid).attr('value', val);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton2(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+</script>

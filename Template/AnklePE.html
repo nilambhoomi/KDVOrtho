@@ -1,0 +1,137 @@
+<div class="col-md-9 row" style="margin-top: 5px">
+    <div id="WrapRightPE" #rigthtdiv>
+        <label><b>Right Ankle:</b> </label>
+        <br />
+        <textarea id="txtFreeFormR" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#RPE
+</textarea>
+
+    </div>
+
+    <br />
+    <div id="WrapLeftPE" #leftdiv>
+        <label><b>Left Ankle:</b> </label>
+        <br />
+        <textarea id="txtFreeFormL" Style="Width:700px;Height:100px" onchange="txtAreaMe(this)">
+#LPE
+</textarea>
+    </div>
+    <div id="TestPE">
+        <label></label>
+    </div>
+
+</div>
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+
+<script type="text/javascript">
+
+    //  window.load = PopulateDropDownList();
+
+    function PopulateDropDownList() {
+
+
+        //   var ddlRangeOfMotionRight = document.getElementById("ddlRangeOfMotionRight");
+
+        if (ddlRangeOfMotionRight.options.length === 0) {
+
+            //  var ddlRangeOfMotionLeft = document.getElementById("ddlRangeOfMotionLeft");
+
+
+
+            $.get('/xml/HSMData.xml', function (res) {
+
+
+                ddlRangeOfMotionLeft.options.length = 0;
+                ddlRangeOfMotionRight.options.length = 0;
+                //var $xml = $(xmlDoc);
+
+                // Find Person Tag
+                var Rom = $(res).find("ROM");
+
+
+                for (var i = 0; i < Rom.length; i++) {
+                    var optionL = document.createElement("option");
+                    var optionR = document.createElement("option");
+
+                    //Set Customer Name in Text part.
+                    optionL.text = Rom[i].getAttribute('name');
+                    optionR.text = Rom[i].getAttribute('name');
+
+
+                    //Add the Option element to DropDownList.
+                    ddlRangeOfMotionLeft.options.add(optionL);
+                    ddlRangeOfMotionRight.options.add(optionR);
+                }
+            });
+        }
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+    function startButton(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+
+        $("#" + txtid).attr('value', val);
+    }
+</script>

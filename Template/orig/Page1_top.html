@@ -1,0 +1,53 @@
+<div id="bodyui" style="margin-top: 15px">
+    <label>
+        Past Medical History
+    </label>
+    <input type='text' ID="PMH" value="Noncontributory" onchange="txtMe(this)" />
+    <label>&nbsp;&nbsp; Past Surgical History </label>
+    <input type='text' ID="PSH" value="Noncontributory" onchange="txtMe(this)" />
+    <label>&nbsp;&nbsp; Allergies </label>
+    <input type='text' ID="Allergies" value="No known drug allergies" onchange="txtMe(this)">
+    </br>
+
+    <label>
+        Medication
+    </label>
+    <input type='text' ID="Medication" value="None" onchange="txtMe(this)" />
+    <input type='text' ID="NSAIDS" value="Patient is using NSAIDS with some relief" style="Width:300px" onchange="txtMe(this)" />
+    &nbsp;&nbsp;
+    <!-- <input type='checkbox' ID="chkBloodThinner" value="Blood thinners" onclick="checkMe(this)" />&nbsp;blood thinners -->
+    <!-- <input type='text' ID="BloodThinner" value="" style="Width:300px" onchange="txtMe(this)" /> -->
+   <label>
+        Family History
+    </label>
+    <input type='text' ID="FamilyHistory" value="Noncontributory" onchange="txtMe(this)" />
+    </label>
+
+    <!--<label>.</label>-->
+    <br />
+
+
+</div>
+
+<script type="text/javascript">
+
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+</script>

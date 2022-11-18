@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ROMS>
+	<ROM>
+		<name>abduction</name>
+		<left></left>
+		<right></right>
+		<normal>180</normal>
+	</ROM>
+	<ROM>
+		<name>adduction </name>
+		<left></left>
+		<right></right>
+		<normal>45</normal>
+	</ROM>
+	<ROM>
+		<name>forward flexion </name>
+		<left></left>
+		<right></right>
+		<normal>180</normal>
+	</ROM>
+	<ROM>
+		<name>internal rotation</name>
+		<left></left>
+		<right></right>
+		<normal>90</normal>
+	</ROM>
+	<ROM>
+		<name>external rotation</name>
+		<left></left>
+		<right></right>
+		<normal>90</normal>
+	</ROM>
+</ROMS>

@@ -1,0 +1,111 @@
+<div class="col-md-9 row" style="margin-top: 5px">
+    <textarea id="txtFreeForm" Style="width:700px;height:100px" onchange="txtAreaMe(this)" Text="Tender (+) interspinous region, at facets L3-4, L4-5, L5-S1 bilaterally. Axial lumbar facet loading positive bilaterally, lower back pain worse on extension and lateral rotation of the lumbar spine bilaterally. Patrick test (+) bilaterally. Kemp test (+) bilaterally. Lumbar rigidity (+). Muscle spasms (+). Trigger points identified at bilateral lumbar paraspinal muscles - taut bands with discrete, hyperirritable, tender spots, with palpation induced muscle twitches and pain referred to buttocks"></textarea>
+
+</div>
+
+
+<style>
+
+    .dropdown {
+        position: relative;
+        width: 200px;
+        display: inline-block;
+    }
+
+        .dropdown select {
+            width: 100%;
+        }
+
+        .dropdown > * {
+            box-sizing: border-box;
+            height: 2em;
+        }
+
+        .dropdown select {
+        }
+
+        .dropdown input {
+            position: absolute;
+            width: calc(100% - 20px);
+        }
+</style>
+<script type="text/javascript">
+
+
+
+    function txtMe(txt) {
+        var val = $(txt).val();
+        $(txt).attr('value', val);
+    }
+
+    function selectVal(txtid, val) {
+
+        $("#" + txtid).attr('value', val);
+    }
+
+    function selectTestCHK(chkid, val) {
+
+        if (val !== '')
+            $("#" + chkid).attr("checked", "checked");
+        else
+            $("#" + chkid).removeAttr("checked");
+    }
+
+    function writeTPtxt() {
+
+
+
+        var str = '';
+
+
+        if ($('#chktrapezius').prop("checked")) {
+            str = $('#txtTrapezius').val() + " " + $('#chktrapezius').val();
+        }
+
+        if ($('#chkscalenes').prop("checked")) {
+            if (str !== '')
+                str += ", " + $('#txtScalenes').val() + " " + $('#chkscalenes').val();
+            else
+                str += $('#txtScalenes').val() + " " + $('#chkscalenes').val();
+        }
+
+        if ($('#chkothers').prop("checked")) {
+            if (str !== '')
+                str += ", " + $('#txtOther').val() + " ";
+            else
+                str += $('#txtOther').val() + " ";
+        }
+
+        var strspan = "On exam, patient has taut tender bands in the #txtmsg muscles.";
+        strspan = strspan.replace('#txtmsg', str);
+
+
+
+        $('#ctl00_ContentPlaceHolder1_hdPETP').val(strspan);
+
+        $('#txtTP').attr('value', str);
+    }
+
+    function txtAreaMe(txt) {
+        debugger
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function startButton2(event) {
+        controlname = "#txtFreeForm";
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en';
+        recognition.start();
+        ignore_onend = false;
+        final_span1.innerHTML = '';
+        interim_span1.innerHTML = '';
+
+        start_timestamp = event.timeStamp;
+    }
+
+</script>

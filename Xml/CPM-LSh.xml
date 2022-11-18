@@ -1,0 +1,41 @@
+<CPM-RSh>
+  <RSh>
+      <txt_knee></txt_knee>
+      <txt_knee_right></txt_knee_right>
+      <txt_knee_left></txt_knee_left>
+      <txt_shoulder>X</txt_shoulder>
+      <txt_shoulder_right></txt_shoulder_right>
+      <txt_shoulder_left>x</txt_shoulder_left>
+      <txt_ankle></txt_ankle>
+      <txt_ankle_right></txt_ankle_right>
+      <txt_ankle_left></txt_ankle_left>
+      <txt_wrist></txt_wrist>
+      <txt_wrist_right></txt_wrist_right>
+      <txt_wrist_left></txt_wrist_left>
+      <txt_other></txt_other>
+      <txt_duration>4-6 weeks</txt_duration>
+      <txt_knee1></txt_knee1>
+      <txt_knee_right1></txt_knee_right1>
+      <txt_knee_left1></txt_knee_left1>
+      <txt_shoulder1>X</txt_shoulder1>
+      <txt_shoulder_right1></txt_shoulder_right1>
+      <txt_shoulder_left1>x</txt_shoulder_left1>
+      <txt_ankle1></txt_ankle1>
+      <txt_ankle_right1></txt_ankle_right1>
+      <txt_ankle_left1></txt_ankle_left1>
+      <txt_wrist1></txt_wrist1>
+      <txt_wrist_right1></txt_wrist_right1>
+      <txt_wrist_left1></txt_wrist_left1>
+      <txt_other1></txt_other1>
+      <txt_duration1>4-6 weeks</txt_duration1>
+      <txt_knee2></txt_knee2>
+      <txt_knee_right2></txt_knee_right2>
+      <txt_knee_left2></txt_knee_left2>
+      <txt_other2></txt_other2>
+      <txt_other_text></txt_other_text>
+      <txt_licenceNo1>147448</txt_licenceNo1>
+      <txt_licenceNo2>147448</txt_licenceNo2>
+      <txt_licenceNo3>147448</txt_licenceNo3>
+       <txt_diagnosis>test</txt_diagnosis>
+  </RSh>
+</CPM-RSh>

@@ -1,0 +1,38 @@
+﻿<div id="bodyui" style="margin-top: 15px">
+
+
+
+    <span> <b>SOCIAL HISTORY: </b></span><br />
+
+    <p>
+        <textarea Style="float: left;Width:650px" ID="txt_details" onchange="txtAreaMe(this)">The patient is a nonsmoker/smoker. </textarea>
+    </p>
+    <div class="clearfix"></div>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+
+    function txtAreaMe(txt) {
+        var val = $(txt).val();
+        $(txt).text(val);
+    }
+
+    function checkMe(chk) {
+
+        if ($(chk).prop("checked")) {
+            if ($(chk).attr("type") === "radio")
+                $("[name=" + $(chk).attr("name") + "]").removeAttr('checked');
+            $(chk).attr('checked', 'checked');
+        }
+        else {
+            $(chk).removeAttr('checked');
+        }
+
+    }
+
+
+</script>
