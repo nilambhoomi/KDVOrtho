@@ -103,8 +103,8 @@ public partial class EditUser : System.Web.UI.Page
         }
         else
         {
-             query = "insert into tblUserMaster(LoginID,Password,FirstName,LastName,MiddleName,eMailID,Signature,CreatedBy,CreatedDate,desig_id,GroupId,UserMasterId,Address,Ph_No,designation) values('" + txtLoginID.Text + "','" + txtPassowrd.Text + "',";
-            query = query + " '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMiddleName.Text + "','" + txtEmail.Text + "',Null,'admin',GETDATE()," + ddlGroup.SelectedItem.Value + "," + ddlDesig.SelectedItem.Value + ",'UKSPPC','" + txtAddress.Text + "','" + txtPhoneNo.Text + "','" + ddlDesig.SelectedItem.Text + "') ";
+             query = "insert into tblUserMaster(LoginID,Password,FirstName,LastName,MiddleName,eMailID,Signature,CreatedBy,CreatedDate,GroupId,desig_id,UserMasterId,Address,Ph_No,designation) values('" + txtLoginID.Text + "','" + txtPassowrd.Text + "',";
+             query = query + " '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMiddleName.Text + "','" + txtEmail.Text + "',Null,'admin',GETDATE()," + ddlGroup.SelectedItem.Value + "," + ddlDesig.SelectedItem.Value + ",'UKSPPC','" + txtAddress.Text + "','" + txtPhoneNo.Text + "','" + ddlDesig.SelectedItem.Text + "') ";
    }
 
         using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connString_V3"].ConnectionString))

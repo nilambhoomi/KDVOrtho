@@ -75,7 +75,7 @@
     <script>
 
         function opensignupload(name) {
-            alert(name);
+           
             $('#ModalSignupload').modal('show');
             $("#<%= hd_name.ClientID%>").val(name);
 
