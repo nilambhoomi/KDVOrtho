@@ -28,9 +28,9 @@ public partial class EditUser : System.Web.UI.Page
             {
                 string id = Request.QueryString["id"];
                 BindUserDetails(id);
-               
+
             }
-          
+
             //GetLocations();
             //GetReports();
             //GetRole();
@@ -38,7 +38,7 @@ public partial class EditUser : System.Web.UI.Page
 
             //if (Request["id"] != null)
             //{
-               
+
 
 
             //}
@@ -91,7 +91,7 @@ public partial class EditUser : System.Web.UI.Page
 
 
 
-
+        string id="";
 
         if (Request["id"] != null)
         {
@@ -100,12 +100,13 @@ public partial class EditUser : System.Web.UI.Page
             query = query + " LastName='" + txtLastName.Text + "',MiddleName='" + txtMiddleName.Text + "',";
             query = query + " Address='" + txtAddress.Text + "',Ph_No='" + txtPhoneNo.Text + "',";
             query = query + " eMailID='" + txtEmail.Text + "' where User_ID=" + Request["id"].ToString();
+            id = Request["id"].ToString();
         }
         else
         {
-             query = "insert into tblUserMaster(LoginID,Password,FirstName,LastName,MiddleName,eMailID,Signature,CreatedBy,CreatedDate,GroupId,desig_id,UserMasterId,Address,Ph_No,designation) values('" + txtLoginID.Text + "','" + txtPassowrd.Text + "',";
-             query = query + " '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMiddleName.Text + "','" + txtEmail.Text + "',Null,'admin',GETDATE()," + ddlGroup.SelectedItem.Value + "," + ddlDesig.SelectedItem.Value + ",'UKSPPC','" + txtAddress.Text + "','" + txtPhoneNo.Text + "','" + ddlDesig.SelectedItem.Text + "') ";
-   }
+            query = "insert into tblUserMaster(LoginID,Password,FirstName,LastName,MiddleName,eMailID,Signature,CreatedBy,CreatedDate,GroupId,desig_id,UserMasterId,Address,Ph_No,designation) values('" + txtLoginID.Text + "','" + txtPassowrd.Text + "',";
+            query = query + " '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMiddleName.Text + "','" + txtEmail.Text + "',Null,'admin',GETDATE()," + ddlGroup.SelectedItem.Value + "," + ddlDesig.SelectedItem.Value + ",'UKSPPC','" + txtAddress.Text + "','" + txtPhoneNo.Text + "','" + ddlDesig.SelectedItem.Text + "');select @@identity; ";
+        }
 
         using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connString_V3"].ConnectionString))
         {
@@ -113,9 +114,16 @@ public partial class EditUser : System.Web.UI.Page
             cmd.CommandType = CommandType.Text;
 
             con.Open();
-            cmd.ExecuteNonQuery();
+            
+            var result = cmd.ExecuteScalar();
             con.Close();
 
+            if (Request["id"] == null)
+                id = result.ToString();
+
+
+            query = " update tblUserMaster set locations=(select locations from tblGroups where Id=" + ddlGroup.SelectedItem.Value + ") where User_ID=" + id;
+            db.executeQuery(query);
 
         }
         Response.Redirect("ManageUser.aspx");
