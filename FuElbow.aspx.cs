@@ -1112,19 +1112,71 @@ public partial class FuElbow : System.Web.UI.Page
 
     public void bindCC(string p)
     {
-        string path = Server.MapPath("~/Template/ElbowCC.html");
-        string body = File.ReadAllText(path);
 
-        if (p == "L")
+
+        int PatientIE_Id = 0, PatientFU_Id = 0;
+        string body = "";
+        DefaultCCPEModel model = new DefaultCCPEModel();
+
+
+        if (Session["UserId"].ToString() == "10")
+        {
+            string query = "SELECT  top 1 LAG(t.PatientFU_ID) OVER (ORDER BY t.PatientFU_ID) as PreviousValue from tblFUbpElbow t WHERE PatientFU_ID in (select PatientFU_ID from tblFUPatient where PatientIE_ID=" + Session["PatientIE_ID"].ToString() + ")  order by PatientFU_ID desc";
+
+            DataSet ds = gDbhelperobj.selectData(query);
+
+            if (ds != null && ds.Tables[0].Rows.Count > 0)
+            {
+                if (string.IsNullOrEmpty(ds.Tables[0].Rows[0]["PreviousValue"].ToString()))
+                {
+                    PatientIE_Id = gDbhelperobj.geIEfromFUID(Session["patientFUId"].ToString());
+
+                    query = "select CCvalue,PEvalue from tblbpElbow WHERE PatientIE_ID =" + PatientIE_Id;
+                    var result = gDbhelperobj.getCarryForwardValues(query);
+
+                    if (result != null)
+                    {
+                        body = result.CC;
+                    }
+                }
+                else
+                {
+
+                    query = "select CCvalue,PEvalue from tblFUbpElbow WHERE PatientFU_ID =" + ds.Tables[0].Rows[0]["PreviousValue"].ToString();
+                    var result = gDbhelperobj.getCarryForwardValues(query);
+
+                    if (result != null)
+                    {
+                        body = result.CC;
+                    }
+                }
+            }
+        }
+        else
+        {
+            string path = Server.MapPath("~/Template/ElbowCC.html");
+            body = File.ReadAllText(path);
+
+
+            model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Left");
+            body = body.Replace("#LCC", model.CC);
+            model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Right");
+            body = body.Replace("#RCC", model.CC);
+
+        }
+
+
+        if (p == "left")
+        {
             body = body.Replace("#rigthtdiv", "style='display:none'");
-        else if (p == "R")
+
+        }
+        else if (p == "right")
+        {
             body = body.Replace("#leftdiv", "style='display:none'");
 
-        DefaultCCPEModel model = new DefaultCCPEModel();
-        model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Left");
-        body = body.Replace("#LCC", model.CC);
-        model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Right");
-        body = body.Replace("#RCC", model.CC);
+        }
+
 
         CF.InnerHtml = body;
 
@@ -1132,19 +1184,69 @@ public partial class FuElbow : System.Web.UI.Page
 
     public void bindPE(string p)
     {
-        string path = Server.MapPath("~/Template/ElbowPE.html");
-        string body = File.ReadAllText(path);
+        int PatientIE_Id = 0, PatientFU_Id = 0;
+        string body = "";
+        DefaultCCPEModel model = new DefaultCCPEModel();
 
-        if (p == "L")
+
+
+        if (Session["UserId"].ToString() == "10")
+        {
+
+
+            string query = "SELECT  top 1 LAG(t.PatientFU_ID) OVER (ORDER BY t.PatientFU_ID) as PreviousValue from tblFUbpElbow t WHERE PatientFU_ID in (select PatientFU_ID from tblFUPatient where PatientIE_ID=" + Session["PatientIE_ID"].ToString() + ")  order by PatientFU_ID desc";
+
+            DataSet ds = gDbhelperobj.selectData(query);
+
+            if (ds != null && ds.Tables[0].Rows.Count > 0)
+            {
+                if (string.IsNullOrEmpty(ds.Tables[0].Rows[0]["PreviousValue"].ToString()))
+                {
+                    PatientIE_Id = gDbhelperobj.geIEfromFUID(Session["patientFUId"].ToString());
+
+                    query = "select CCvalue,PEvalue from tblbpElbow WHERE PatientIE_ID =" + PatientIE_Id;
+                    var result = gDbhelperobj.getCarryForwardValues(query);
+
+                    if (result != null)
+                    {
+                        body = result.PE;
+                    }
+                }
+                else
+                {
+                    query = "select CCvalue,PEvalue from tblFUbpElbow WHERE PatientFU_ID =" + ds.Tables[0].Rows[0]["PreviousValue"].ToString();
+                    var result = gDbhelperobj.getCarryForwardValues(query);
+
+                    if (result != null)
+                    {
+                        body = result.PE;
+                    }
+                }
+            }
+        }
+        else
+        {
+            string path = Server.MapPath("~/Template/ElbowPE.html");
+            body = File.ReadAllText(path);
+            model = new DefaultCCPEModel();
+
+
+            model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Right");
+            body = body.Replace("#RPE", model.PE);
+            model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Left");
+            body = body.Replace("#LPE", model.PE);
+
+        }
+        if (p == "left")
+        {
             body = body.Replace("#rigthtdiv", "style='display:none'");
-        else if (p == "R")
+
+        }
+        else if (p == "right")
+        {
             body = body.Replace("#leftdiv", "style='display:none'");
 
-        DefaultCCPEModel model = new DefaultCCPEModel();
-        model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Right");
-        body = body.Replace("#RPE", model.PE);
-        model = gDbhelperobj.getDefaultCCPEValues("Elbow", "Left");
-        body = body.Replace("#LPE", model.PE);
+        }
 
         divPE.InnerHtml = body;
 

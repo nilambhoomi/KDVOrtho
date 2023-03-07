@@ -91,7 +91,7 @@ public partial class EditUser : System.Web.UI.Page
 
 
 
-        string id="";
+        string id="",gid="";
 
         if (Request["id"] != null)
         {
@@ -108,6 +108,9 @@ public partial class EditUser : System.Web.UI.Page
             query = query + " '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMiddleName.Text + "','" + txtEmail.Text + "',Null,'admin',GETDATE()," + ddlGroup.SelectedItem.Value + "," + ddlDesig.SelectedItem.Value + ",'UKSPPC','" + txtAddress.Text + "','" + txtPhoneNo.Text + "','" + ddlDesig.SelectedItem.Text + "');select @@identity; ";
         }
 
+        gid = ddlGroup.SelectedItem.Value;
+
+
         using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connString_V3"].ConnectionString))
         {
             SqlCommand cmd = new SqlCommand(query, con);
@@ -122,7 +125,7 @@ public partial class EditUser : System.Web.UI.Page
                 id = result.ToString();
 
 
-            query = " update tblUserMaster set locations=(select locations from tblGroups where Id=" + ddlGroup.SelectedItem.Value + ") where User_ID=" + id;
+            query = " update tblUserMaster set locations=(select locations from tblGroups where Id=" + gid + ") where User_ID=" + id;
             db.executeQuery(query);
 
         }

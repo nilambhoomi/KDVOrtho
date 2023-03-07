@@ -518,5 +518,56 @@ public class DBHelperClass
         return defaultModel;
 
     }
+
+    public int getLatestFUID(string PatientIE_Id)
+    {
+
+        string query = "select top 1 PatientFU_ID from tblFUPatient where PatientIE_ID=" + PatientIE_Id + " order by PatientFU_ID desc";
+        var dt = this.selectDatatable(query);
+        int id = 0;
+
+        if (dt != null && dt.Rows.Count > 0)
+        {
+            id = Convert.ToInt32(dt.Rows[0][0].ToString());
+        }
+
+        return id;
+      
+    }
+
+    public int geIEfromFUID(string PatientFU_Id)
+    {
+
+        string query = "select PatientIE_ID from tblFUPatient where PatientFU_ID=" + PatientFU_Id;
+        var dt = this.selectDatatable(query);
+        int id = 0;
+
+        if (dt != null && dt.Rows.Count > 0)
+        {
+            id = Convert.ToInt32(dt.Rows[0][0].ToString());
+        }
+
+        return id;
+
+    }
+
+
+    public DefaultCCPEModel getCarryForwardValues(string query)
+    {
+        DefaultCCPEModel _obj = new DefaultCCPEModel(); 
+
+        var dt = this.selectDatatable(query);
+        int id = 0;
+
+        if (dt != null && dt.Rows.Count > 0)
+        {
+            _obj.CC = dt.Rows[0]["CCvalue"].ToString();
+            _obj.PE = dt.Rows[0]["PEvalue"].ToString();
+          
+        }
+
+        return _obj;
+
+    }
 }
 
